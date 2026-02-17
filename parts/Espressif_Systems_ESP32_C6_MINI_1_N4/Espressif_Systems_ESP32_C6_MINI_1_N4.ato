@@ -2,13 +2,7 @@
 import has_designator_prefix
 import has_part_picked
 import is_atomic_part
-import is_auto_generated
-
 component Espressif_Systems_ESP32_C6_MINI_1_N4_package:
-    # This trait marks this file as auto-generated
-    # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C5736265", date="2026-02-17T20:37:12.431438+00:00", checksum="932ea7e08e38174b9273cefbde63fd144c89e215e30350387fc18c2afdd10723">
-
     trait is_atomic_part<manufacturer="Espressif Systems", partnumber="ESP32-C6-MINI-1-N4", footprint="WIFIM-SMD_61P-L16.6-W13.2-P0.80-ESP32-C6-MINI-1-N4.kicad_mod", symbol="ESP32-C6-MINI-1-N4.kicad_sym", model="WIFIM-SMD_61P-L16.6-W13.2-P0.80-ESP32-C6-MINI-1-N4.STEP">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C5736265", manufacturer="Espressif Systems", partno="ESP32-C6-MINI-1-N4">
     trait has_designator_prefix<prefix="U">

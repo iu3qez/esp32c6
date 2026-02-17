@@ -2,13 +2,7 @@
 import has_designator_prefix
 import has_part_picked
 import is_atomic_part
-import is_auto_generated
-
 component Korean_Hroparts_Elec_TYPE_C_31_M_12_package:
-    # This trait marks this file as auto-generated
-    # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C165948", date="2026-02-17T20:41:59.278867+00:00", checksum="fc61213b70d5bf17d830c3d775c334d0b080f0a9d4f89d82fda4d1ba07e9b706">
-
     trait is_atomic_part<manufacturer="Korean Hroparts Elec", partnumber="TYPE-C-31-M-12", footprint="USB-C_SMD-TYPE-C-31-M-12_1.kicad_mod", symbol="TYPE-C-31-M-12.kicad_sym", model="USB-C_SMD-TYPE-C-31-M-12.step">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C165948", manufacturer="Korean Hroparts Elec", partno="TYPE-C-31-M-12">
     trait has_designator_prefix<prefix="USBC">

@@ -2,13 +2,7 @@
 import has_designator_prefix
 import has_part_picked
 import is_atomic_part
-import is_auto_generated
-
 component Slkor_1N5817W_package:
-    # This trait marks this file as auto-generated
-    # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C5185908", date="2026-02-17T20:47:13.159780+00:00", checksum="ba3d92e4ffaa5e7bb8fc469d66f133e86c20462755ee8789d1cc08a9d145071f">
-
     trait is_atomic_part<manufacturer="Slkor", partnumber="1N5817W", footprint="SOD-123_L2.7-W1.6-LS3.6-RD.kicad_mod", symbol="1N5817W_C5185908.kicad_sym", model="SOD-123_L2.7-W1.6-LS3.STEP">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C5185908", manufacturer="Slkor", partno="1N5817W">
     trait has_designator_prefix<prefix="U">

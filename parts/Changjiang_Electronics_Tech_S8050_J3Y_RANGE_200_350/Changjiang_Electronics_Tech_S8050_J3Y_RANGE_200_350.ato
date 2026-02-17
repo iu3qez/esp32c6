@@ -1,0 +1,21 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350_package:
+    """S8050 (200-350)"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C2146", date="2026-02-17T21:25:27.618691+00:00", checksum="cfa275e48905e784178e70dfb268be4b5068ade589208bbc8ce08bf9a1c99835">
+
+    trait is_atomic_part<manufacturer="Changjiang Electronics Tech ", partnumber="S8050 J3Y(RANGE:200-350)", footprint="SOT-23-3_L3.0-W1.7-P0.95-LS2.9-BR.kicad_mod", symbol="S8050_C2146.kicad_sym", model="SOT-23-3L_L2.9-W1.6-H1.1-LS2.8-P0.95.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C2146", manufacturer="Changjiang Electronics Tech ", partno="S8050 J3Y(RANGE:200-350)">
+    trait has_designator_prefix<prefix="Q">
+
+    # pins
+    signal B ~ pin 1
+    signal C ~ pin 3
+    signal E ~ pin 2

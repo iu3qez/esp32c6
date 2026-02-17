@@ -2,13 +2,7 @@
 import has_designator_prefix
 import has_part_picked
 import is_atomic_part
-import is_auto_generated
-
 component BZCN_TSA061B2808B_package:
-    # This trait marks this file as auto-generated
-    # If you want to manually change it, remove the trait
-    trait is_auto_generated<system="ato_part", source="easyeda:C20624994", date="2026-02-17T20:54:48.245008+00:00", checksum="f97ccfb4d098756b0dfff54e9c5b07f20b8e164413f64612d1e5174ecd281449">
-
     trait is_atomic_part<manufacturer="BZCN", partnumber="TSA061B2808B", footprint="SW-SMD_TSA061B2808B.kicad_mod", symbol="TSA061B2808B.kicad_sym", model="SW-SMD_TSA061B2808B.STEP">
     trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C20624994", manufacturer="BZCN", partno="TSA061B2808B">
     trait has_designator_prefix<prefix="SW">

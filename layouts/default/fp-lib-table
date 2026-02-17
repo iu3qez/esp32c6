@@ -8,6 +8,13 @@
         (descr "atopile: part lib: BZCN_TSA061B2808B")
     )
     (lib
+        (name "Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350")
+        (type "KiCad")
+        (uri "${KIPRJMOD}/../../parts/Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350")
+        (options "")
+        (descr "atopile: part lib: Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350")
+    )
+    (lib
         (name "Espressif_Systems_ESP32_C6_MINI_1_N4")
         (type "KiCad")
         (uri "${KIPRJMOD}/../../parts/Espressif_Systems_ESP32_C6_MINI_1_N4")

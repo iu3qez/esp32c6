@@ -1,0 +1,171 @@
+(footprint "Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350:SOT-23-3_L3.0-W1.7-P0.95-LS2.9-BR"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4.95 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "259c7988-c0ab-48af-941a-b1e8a2dc8309")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "SOT-23-3_L3.0-W1.7-P0.95-LS2.9-BR"
+        (at 0 4.95 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "defde579-174c-4db3-a252-1dff5cfcda98")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "fc8b64e23b5e694119e9807aff701874e836594e4a1766a1ab19261a80dcdb2e"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "17c57ac3-7b5e-4131-91a4-21e56bc36c59")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start 0.86 -1.53)
+        (end -0.86 -1.53)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "bea1166a-6da0-435c-820a-603200e98f48")
+    )
+    (fp_line
+        (start -0.86 -1.53)
+        (end -0.86 -0.49)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "7c94144a-95b5-4e35-9347-2c4da8c2de9e")
+    )
+    (fp_line
+        (start 0.86 1.53)
+        (end -0.86 1.53)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "2ad5ecf0-ded8-4447-b823-46249971d256")
+    )
+    (fp_line
+        (start -0.86 1.53)
+        (end -0.86 0.49)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "8156633b-7210-4664-8875-fb1c8c3ea950")
+    )
+    (fp_line
+        (start 0.86 -0.46)
+        (end 0.86 0.46)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f786f242-3687-4b50-adc6-80e91bdc6e84")
+    )
+    (fp_circle
+        (center 1.42 1.5)
+        (end 1.45 1.5)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "408e184d-0a6b-4bc3-9cb9-7c2329976f0c")
+    )
+    (fp_circle
+        (center 1.65 0.95)
+        (end 1.75 0.95)
+        (stroke
+            (width 0.2)
+            (type solid)
+        )
+        (fill no)
+        (layer "Cmts.User")
+        (uuid "fedefc2a-f742-40fe-8280-df50c0f950d3")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "81c418c6-d90c-4655-9915-a28f435e2d9f")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4.95 0)
+        (layer "F.SilkS")
+        (uuid "259c7988-c0ab-48af-941a-b1e8a2dc8309")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "1" smd rect
+        (at 1.1 0.95 0)
+        (size 1.04 0.53)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "47c1a667-378e-4301-ae92-5e46c7e2ebcb")
+    )
+    (pad "2" smd rect
+        (at 1.1 -0.95 0)
+        (size 1.04 0.53)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "856e046b-7d14-47ac-9fcf-03f72da9bee5")
+    )
+    (pad "3" smd rect
+        (at -1.1 0 0)
+        (size 1.04 0.53)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "36f84628-7384-4e4c-9387-1a905507d3f9")
+    )
+    (model "${KIPRJMOD}/../../parts/Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350/SOT-23-3L_L2.9-W1.6-H1.1-LS2.8-P0.95.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 270)
+        )
+    )
+)

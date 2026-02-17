@@ -1,5 +1,4 @@
 #pragma experiment("BRIDGE_CONNECT")
-#pragma experiment("MODULE_TEMPLATING")
 
 # Part imports
 from "parts/Espressif_Systems_ESP32_C6_MINI_1_N4/Espressif_Systems_ESP32_C6_MINI_1_N4.ato" import Espressif_Systems_ESP32_C6_MINI_1_N4_package
@@ -11,7 +10,7 @@ from "parts/HONGLITRONIC_PSC_1608U52GC_G4/HONGLITRONIC_PSC_1608U52GC_G4.ato" imp
 from "parts/Slkor_1N5817W/Slkor_1N5817W.ato" import Slkor_1N5817W_package
 from "parts/BZCN_TSA061B2808B/BZCN_TSA061B2808B.ato" import BZCN_TSA061B2808B_package
 from "parts/chxunda_XD_XHD_2_4A/chxunda_XD_XHD_2_4A.ato" import chxunda_XD_XHD_2_4A_package
-from "atopile/mounting-holes/MountingHole.py" import MountingHole
+from "atopile/mounting-holes/parts/MountingHole_3_2_M3_Pad/MountingHole_3_2_M3_Pad.ato" import MountingHole_3_2_M3_Pad_package
 
 # Standard library
 import Resistor
@@ -241,14 +240,14 @@ module App:
     power_3v3.hv ~> gpio_pullup_6 ~> esp32.IO6
 
     # ========== Mounting Holes (M3, connected to GND) ==========
-    hole_tl = new MountingHole<metric_screw_size="M3", pad_type="Pad">
+    hole_tl = new MountingHole_3_2_M3_Pad_package
     hole_tl.contact ~ power_3v3.lv
 
-    hole_tr = new MountingHole<metric_screw_size="M3", pad_type="Pad">
+    hole_tr = new MountingHole_3_2_M3_Pad_package
     hole_tr.contact ~ power_3v3.lv
 
-    hole_bl = new MountingHole<metric_screw_size="M3", pad_type="Pad">
+    hole_bl = new MountingHole_3_2_M3_Pad_package
     hole_bl.contact ~ power_3v3.lv
 
-    hole_br = new MountingHole<metric_screw_size="M3", pad_type="Pad">
+    hole_br = new MountingHole_3_2_M3_Pad_package
     hole_br.contact ~ power_3v3.lv
