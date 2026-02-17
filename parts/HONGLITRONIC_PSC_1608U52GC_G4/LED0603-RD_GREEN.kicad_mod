@@ -1,0 +1,204 @@
+(footprint "HONGLITRONIC_PSC_1608U52GC_G4:LED0603-RD_GREEN"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "a9d57e3e-df5d-4569-aee8-1ab4646b53ab")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "LED0603-RD_GREEN"
+        (at 0 4 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "199120f5-afa4-44ec-abb3-33affe2ca6f4")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "521377a17b2b73e7d6c0f3232979c4069e387a6c75aa64646136ab30f8747303"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "3ba2adb3-7f21-4df8-8003-11b9285b24e8")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr smd)
+    (fp_line
+        (start 0.24 -0.76)
+        (end 1.39 -0.76)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f5925f31-8665-4ebe-ad46-d2e950b7e527")
+    )
+    (fp_line
+        (start 0.24 0.74)
+        (end 1.39 0.74)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "05eed052-511c-41bd-becb-a3f59f2148b8")
+    )
+    (fp_line
+        (start 1.39 -0.76)
+        (end 1.39 0.72)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "d01a0622-8a56-4e21-b053-822382b7621e")
+    )
+    (fp_line
+        (start -0.14 0.74)
+        (end -1.19 0.74)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "95668c8a-b15e-408b-a3d8-d9727b353aa4")
+    )
+    (fp_line
+        (start -1.49 0.34)
+        (end -1.49 0.44)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "3c09b143-6d9e-4572-a863-ba6524eb4333")
+    )
+    (fp_line
+        (start -1.49 0.44)
+        (end -1.19 0.74)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "f11e21d1-9d8a-41b4-87bc-8bbdd6b2400e")
+    )
+    (fp_line
+        (start -1.49 -0.36)
+        (end -1.49 0.34)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "92ee84af-aaf4-4df1-98c6-1ea9ae6ea403")
+    )
+    (fp_line
+        (start -1.49 -0.36)
+        (end -1.49 -0.46)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "02df9e68-be40-450b-b204-b166176a24ca")
+    )
+    (fp_line
+        (start -1.49 -0.46)
+        (end -1.19 -0.76)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "e1a98685-a728-4888-b1d4-bd6f222f8f58")
+    )
+    (fp_line
+        (start -0.14 -0.76)
+        (end -1.19 -0.76)
+        (stroke
+            (width 0.15)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "73770d1f-2985-41e4-8fae-b9cf561f31e0")
+    )
+    (fp_circle
+        (center -0.8 0.4)
+        (end -0.77 0.4)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "b20cd21d-0f12-42fa-9835-1f03905fa246")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "a8522833-b2fb-4229-a7d2-785b092bad9e")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (uuid "a9d57e3e-df5d-4569-aee8-1ab4646b53ab")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "1" smd rect
+        (at -0.8 0 90)
+        (size 0.8 0.8)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "a198d06b-3851-477d-886e-e32a63271978")
+    )
+    (pad "2" smd rect
+        (at 0.8 0 90)
+        (size 0.8 0.8)
+        (layers "F.Cu" "F.Paste" "F.Mask")
+        (uuid "3b938d67-04df-45ba-882a-f12f52e216ed")
+    )
+    (model "${KIPRJMOD}/../../parts/HONGLITRONIC_PSC_1608U52GC_G4/LED0603-RD_GREEN.STEP"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)

@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component HONGLITRONIC_PSC_1608U52GC_G4_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C22371297", date="2026-02-17T20:47:04.401757+00:00", checksum="3649a76ddbcb63f97affc2c98d685cc344cb481863da88a84bca7ecb1957dd30">
+
+    trait is_atomic_part<manufacturer="HONGLITRONIC)", partnumber="PSC-1608U52GC-G4", footprint="LED0603-RD_GREEN.kicad_mod", symbol="PSC-1608U52GC-G4.kicad_sym", model="LED0603-RD_GREEN.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C22371297", manufacturer="HONGLITRONIC)", partno="PSC-1608U52GC-G4">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal A ~ pin 2
+    signal K ~ pin 1

@@ -1,0 +1,24 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component chxunda_XD_XHD_2_4A_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C17700792", date="2026-02-17T21:01:21.846856+00:00", checksum="94f3f5c94d79fb22801c47fc8a125bffdaf3e30031582bc7fd475c0c14481063">
+
+    trait is_atomic_part<manufacturer="chxunda", partnumber="XD-XHD-2*4A", footprint="CONN-TH_XD-XHD-2-4A.kicad_mod", symbol="XD-XHD-2*4A.kicad_sym", model="CONN-TH_XD-XHD-2-4A.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C17700792", manufacturer="chxunda", partno="XD-XHD-2*4A">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    pin 1
+    pin 8
+    pin 3
+    pin 6
+    pin 5
+    pin 4
+    pin 7
+    pin 2

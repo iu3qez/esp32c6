@@ -1,4 +1,254 @@
-"""Brand new atopile project!"""
+#pragma experiment("BRIDGE_CONNECT")
+#pragma experiment("MODULE_TEMPLATING")
+
+# Part imports
+from "parts/Espressif_Systems_ESP32_C6_MINI_1_N4/Espressif_Systems_ESP32_C6_MINI_1_N4.ato" import Espressif_Systems_ESP32_C6_MINI_1_N4_package
+from "parts/Korean_Hroparts_Elec_TYPE_C_31_M_12/Korean_Hroparts_Elec_TYPE_C_31_M_12.ato" import Korean_Hroparts_Elec_TYPE_C_31_M_12_package
+from "parts/UMW_AMS1117_3_3/UMW_AMS1117_3_3.ato" import UMW_AMS1117_3_3_package
+from "parts/WCH_CH340G/WCH_CH340G.ato" import WCH_CH340G_package
+from "parts/Yangxing_Tech_X322512MSB4SI/Yangxing_Tech_X322512MSB4SI.ato" import Yangxing_Tech_X322512MSB4SI_package
+from "parts/HONGLITRONIC_PSC_1608U52GC_G4/HONGLITRONIC_PSC_1608U52GC_G4.ato" import HONGLITRONIC_PSC_1608U52GC_G4_package
+from "parts/Slkor_1N5817W/Slkor_1N5817W.ato" import Slkor_1N5817W_package
+from "parts/BZCN_TSA061B2808B/BZCN_TSA061B2808B.ato" import BZCN_TSA061B2808B_package
+from "parts/chxunda_XD_XHD_2_4A/chxunda_XD_XHD_2_4A.ato" import chxunda_XD_XHD_2_4A_package
+from "atopile/mounting-holes/MountingHole.py" import MountingHole
+
+# Standard library
+import Resistor
+import Capacitor
+import ElectricPower
 
 module App:
-    pass
+    # ========== Power Rails ==========
+    power_5v = new ElectricPower
+    power_3v3 = new ElectricPower
+
+    # ========== Main Components ==========
+    esp32 = new Espressif_Systems_ESP32_C6_MINI_1_N4_package
+    usb_esp = new Korean_Hroparts_Elec_TYPE_C_31_M_12_package
+    usb_debug = new Korean_Hroparts_Elec_TYPE_C_31_M_12_package
+    ldo = new UMW_AMS1117_3_3_package
+    ch340g = new WCH_CH340G_package
+    crystal = new Yangxing_Tech_X322512MSB4SI_package
+    led = new HONGLITRONIC_PSC_1608U52GC_G4_package
+    diode_esp = new Slkor_1N5817W_package
+    diode_debug = new Slkor_1N5817W_package
+
+    # ========== USB-C CC Pulldowns (5.1k for device mode) ==========
+    # USB ESP32
+    cc1_r_esp = new Resistor
+    cc1_r_esp.resistance = 5.1kohm +/- 5%
+    cc1_r_esp.package = "0603"
+    usb_esp.CC1 ~> cc1_r_esp ~> power_5v.lv
+
+    cc2_r_esp = new Resistor
+    cc2_r_esp.resistance = 5.1kohm +/- 5%
+    cc2_r_esp.package = "0603"
+    usb_esp.CC2 ~> cc2_r_esp ~> power_5v.lv
+
+    # USB Debug
+    cc1_r_debug = new Resistor
+    cc1_r_debug.resistance = 5.1kohm +/- 5%
+    cc1_r_debug.package = "0603"
+    usb_debug.CC1 ~> cc1_r_debug ~> power_5v.lv
+
+    cc2_r_debug = new Resistor
+    cc2_r_debug.resistance = 5.1kohm +/- 5%
+    cc2_r_debug.package = "0603"
+    usb_debug.CC2 ~> cc2_r_debug ~> power_5v.lv
+
+    # ========== VBUS Diode OR (1N5817W: pin 2=anode, pin 1=cathode) ==========
+    usb_esp.VBUS ~ diode_esp.2
+    diode_esp.1 ~ power_5v.hv
+
+    usb_debug.VBUS ~ diode_debug.2
+    diode_debug.1 ~ power_5v.hv
+
+    # USB GND + shield
+    usb_esp.GND ~ power_5v.lv
+    usb_esp.EH ~ power_5v.lv
+    usb_debug.GND ~ power_5v.lv
+    usb_debug.EH ~ power_5v.lv
+
+    # ========== LDO: AMS1117-3.3 (5V -> 3.3V) ==========
+    ldo.VIN ~ power_5v.hv
+    ldo.ADJGND ~ power_5v.lv
+    ldo.VOUTTAB ~ power_3v3.hv
+    ldo.TAB ~ power_3v3.hv
+    power_3v3.lv ~ power_5v.lv
+
+    # Input cap
+    ldo_cin = new Capacitor
+    ldo_cin.capacitance = 10uF +/- 20%
+    ldo_cin.package = "0805"
+    power_5v.hv ~> ldo_cin ~> power_5v.lv
+
+    # Output cap
+    ldo_cout = new Capacitor
+    ldo_cout.capacitance = 22uF +/- 20%
+    ldo_cout.package = "0805"
+    power_3v3.hv ~> ldo_cout ~> power_3v3.lv
+
+    # ========== ESP32-C6 ==========
+    # Power
+    esp32.P3V3 ~ power_3v3.hv
+    esp32.GND ~ power_3v3.lv
+
+    # Decoupling
+    esp32_cap = new Capacitor
+    esp32_cap.capacitance = 100nF +/- 20%
+    esp32_cap.package = "0603"
+    power_3v3.hv ~> esp32_cap ~> power_3v3.lv
+
+    # EN: pullup resistor + filter cap
+    en_pullup = new Resistor
+    en_pullup.resistance = 10kohm +/- 5%
+    en_pullup.package = "0603"
+    power_3v3.hv ~> en_pullup ~> esp32.EN
+
+    en_cap = new Capacitor
+    en_cap.capacitance = 1uF +/- 20%
+    en_cap.package = "0603"
+    esp32.EN ~> en_cap ~> power_3v3.lv
+
+    # Native USB (IO12=D-, IO13=D+)
+    usb_esp.DN1 ~ esp32.IO12
+    usb_esp.DN2 ~ esp32.IO12
+    usb_esp.DP1 ~ esp32.IO13
+    usb_esp.DP2 ~ esp32.IO13
+
+    # ========== CH340G USB-UART Bridge ==========
+    # Power: 5V on VCC, internal 3.3V on V3
+    ch340g.VCC ~ power_5v.hv
+    ch340g.GND ~ power_5v.lv
+
+    # V3 decoupling (internal 3.3V regulator)
+    ch340g_v3_cap = new Capacitor
+    ch340g_v3_cap.capacitance = 100nF +/- 20%
+    ch340g_v3_cap.package = "0603"
+    ch340g.V3 ~> ch340g_v3_cap ~> power_5v.lv
+
+    # VCC decoupling
+    ch340g_vcc_cap = new Capacitor
+    ch340g_vcc_cap.capacitance = 100nF +/- 20%
+    ch340g_vcc_cap.package = "0603"
+    power_5v.hv ~> ch340g_vcc_cap ~> power_5v.lv
+
+    # 12MHz Crystal
+    ch340g.XI ~ crystal.OSC1
+    ch340g.XO ~ crystal.OSC2
+    crystal.GND ~ power_5v.lv
+
+    # Crystal load caps (22pF)
+    xtal_c1 = new Capacitor
+    xtal_c1.capacitance = 22pF +/- 10%
+    xtal_c1.package = "0603"
+    crystal.OSC1 ~> xtal_c1 ~> power_5v.lv
+
+    xtal_c2 = new Capacitor
+    xtal_c2.capacitance = 22pF +/- 10%
+    xtal_c2.package = "0603"
+    crystal.OSC2 ~> xtal_c2 ~> power_5v.lv
+
+    # USB from debug connector
+    usb_debug.DP1 ~ ch340g.UDpos
+    usb_debug.DP2 ~ ch340g.UDpos
+    usb_debug.DN1 ~ ch340g.UDneg
+    usb_debug.DN2 ~ ch340g.UDneg
+
+    # UART: CH340G TX->ESP32 RX, CH340G RX<-ESP32 TX
+    ch340g.TXD ~ esp32.RXD0
+    ch340g.RXD ~ esp32.TXD0
+
+    # ========== Status LED on IO8 ==========
+    led_resistor = new Resistor
+    led_resistor.resistance = 1kohm +/- 5%
+    led_resistor.package = "0603"
+    esp32.IO8 ~> led_resistor ~> led.A
+    led.K ~ power_3v3.lv
+
+    # ========== Buttons ==========
+    # Reset button: pulls EN low (pins 1,2 = one side; pins 3,4 = other side)
+    btn_reset = new BZCN_TSA061B2808B_package
+    btn_reset.1 ~ esp32.EN
+    btn_reset.2 ~ esp32.EN
+    btn_reset.3 ~ power_3v3.lv
+    btn_reset.4 ~ power_3v3.lv
+    btn_reset.5 ~ power_3v3.lv
+
+    # Boot button: pulls IO9 low to enter download mode
+    btn_boot = new BZCN_TSA061B2808B_package
+    btn_boot.1 ~ esp32.IO9
+    btn_boot.2 ~ esp32.IO9
+    btn_boot.3 ~ power_3v3.lv
+    btn_boot.4 ~ power_3v3.lv
+    btn_boot.5 ~ power_3v3.lv
+
+    # IO9 pullup (keep high normally)
+    boot_pullup = new Resistor
+    boot_pullup.resistance = 10kohm +/- 5%
+    boot_pullup.package = "0603"
+    power_3v3.hv ~> boot_pullup ~> esp32.IO9
+
+    # ========== GPIO Header (2x4) ==========
+    header = new chxunda_XD_XHD_2_4A_package
+
+    # Pin 1 = GND
+    header.1 ~ power_3v3.lv
+
+    # Pins 2-8 = free GPIOs with pullups
+    header.2 ~ esp32.IO0
+    header.3 ~ esp32.IO1
+    header.4 ~ esp32.IO2
+    header.5 ~ esp32.IO3
+    header.6 ~ esp32.IO4
+    header.7 ~ esp32.IO5
+    header.8 ~ esp32.IO6
+
+    gpio_pullup_0 = new Resistor
+    gpio_pullup_0.resistance = 10kohm +/- 5%
+    gpio_pullup_0.package = "0603"
+    power_3v3.hv ~> gpio_pullup_0 ~> esp32.IO0
+
+    gpio_pullup_1 = new Resistor
+    gpio_pullup_1.resistance = 10kohm +/- 5%
+    gpio_pullup_1.package = "0603"
+    power_3v3.hv ~> gpio_pullup_1 ~> esp32.IO1
+
+    gpio_pullup_2 = new Resistor
+    gpio_pullup_2.resistance = 10kohm +/- 5%
+    gpio_pullup_2.package = "0603"
+    power_3v3.hv ~> gpio_pullup_2 ~> esp32.IO2
+
+    gpio_pullup_3 = new Resistor
+    gpio_pullup_3.resistance = 10kohm +/- 5%
+    gpio_pullup_3.package = "0603"
+    power_3v3.hv ~> gpio_pullup_3 ~> esp32.IO3
+
+    gpio_pullup_4 = new Resistor
+    gpio_pullup_4.resistance = 10kohm +/- 5%
+    gpio_pullup_4.package = "0603"
+    power_3v3.hv ~> gpio_pullup_4 ~> esp32.IO4
+
+    gpio_pullup_5 = new Resistor
+    gpio_pullup_5.resistance = 10kohm +/- 5%
+    gpio_pullup_5.package = "0603"
+    power_3v3.hv ~> gpio_pullup_5 ~> esp32.IO5
+
+    gpio_pullup_6 = new Resistor
+    gpio_pullup_6.resistance = 10kohm +/- 5%
+    gpio_pullup_6.package = "0603"
+    power_3v3.hv ~> gpio_pullup_6 ~> esp32.IO6
+
+    # ========== Mounting Holes (M3, connected to GND) ==========
+    hole_tl = new MountingHole<metric_screw_size="M3", pad_type="Pad">
+    hole_tl.contact ~ power_3v3.lv
+
+    hole_tr = new MountingHole<metric_screw_size="M3", pad_type="Pad">
+    hole_tr.contact ~ power_3v3.lv
+
+    hole_bl = new MountingHole<metric_screw_size="M3", pad_type="Pad">
+    hole_bl.contact ~ power_3v3.lv
+
+    hole_br = new MountingHole<metric_screw_size="M3", pad_type="Pad">
+    hole_br.contact ~ power_3v3.lv
