@@ -11,6 +11,7 @@ from "parts/Slkor_1N5817W/Slkor_1N5817W.ato" import Slkor_1N5817W_package
 from "parts/BZCN_TSA061B2808B/BZCN_TSA061B2808B.ato" import BZCN_TSA061B2808B_package
 from "parts/chxunda_XD_XHD_2_4A/chxunda_XD_XHD_2_4A.ato" import chxunda_XD_XHD_2_4A_package
 from "atopile/mounting-holes/parts/MountingHole_3_2_M3_Pad/MountingHole_3_2_M3_Pad.ato" import MountingHole_3_2_M3_Pad_package
+from "parts/Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350/Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350.ato" import Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350_package
 
 # Standard library
 import Resistor
@@ -238,6 +239,33 @@ module App:
     gpio_pullup_6.resistance = 10kohm +/- 5%
     gpio_pullup_6.package = "0603"
     power_3v3.hv ~> gpio_pullup_6 ~> esp32.IO6
+
+    # ========== Auto-Reset Circuit (cross-coupled NPN, ESP32-DevKitC style) ==========
+    # Q1: nRTS drives base, collector=nDTR, emitter=EN
+    # When DTR=0,RTS=1: Q1 ON, EN pulled to nDTR=LOW (reset)
+    # Q2: nDTR drives base, collector=nRTS, emitter=IO9
+    # When DTR=1,RTS=0: Q2 ON, IO9 pulled to nRTS=LOW (boot mode)
+    q1_rst = new Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350_package
+    q2_boot = new Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350_package
+
+    # Base resistors (10k)
+    q1_rb = new Resistor
+    q1_rb.resistance = 10kohm +/- 5%
+    q1_rb.package = "0603"
+
+    q2_rb = new Resistor
+    q2_rb.resistance = 10kohm +/- 5%
+    q2_rb.package = "0603"
+
+    # Q1: nRTS -> 10k -> Base, Collector=nDTR, Emitter=EN
+    ch340g.nRTS ~> q1_rb ~> q1_rst.B
+    q1_rst.C ~ ch340g.nDTR
+    q1_rst.E ~ esp32.EN
+
+    # Q2: nDTR -> 10k -> Base, Collector=nRTS, Emitter=IO9
+    ch340g.nDTR ~> q2_rb ~> q2_boot.B
+    q2_boot.C ~ ch340g.nRTS
+    q2_boot.E ~ esp32.IO9
 
     # ========== Mounting Holes (M3, connected to GND) ==========
     hole_tl = new MountingHole_3_2_M3_Pad_package
