@@ -194,3 +194,7 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+.mcp.json
+.tldrignore
+.cursor/
+.claude/smarter-everyday-state.json
