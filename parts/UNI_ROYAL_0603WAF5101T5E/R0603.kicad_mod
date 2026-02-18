@@ -1,14 +1,12 @@
-(footprint "UNI_ROYAL_0603WAF5101T5E:R0603"
+(footprint "R0603"
 	(version 20241229)
-	(generator "faebryk_convert")
-	(generator_version "v5")
+	(generator "kicad-footprint-generator")
 	(layer "F.Cu")
-	(tedit "5DC5F6A4")
-	(uuid "d0c9c0df-ef7e-4cf4-883e-a8c39c4b3ca2")
+	(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
+	(tags "resistor handsolder")
 	(property "Reference" "REF**"
-		(at 0 -4)
+		(at 0 -1.43 0)
 		(layer "F.SilkS")
-		(uuid "8f23db93-9407-4bbc-a7ec-0f72a104046e")
 		(effects
 			(font
 				(size 1 1)
@@ -16,10 +14,9 @@
 			)
 		)
 	)
-	(property "Value" "R0603"
-		(at 0 4)
+	(property "Value" "R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+		(at 0 1.43 0)
 		(layer "F.Fab")
-		(uuid "b047c92c-0df1-4838-9f90-18e23ce8de5c")
 		(effects
 			(font
 				(size 1 1)
@@ -28,122 +25,76 @@
 		)
 	)
 	(attr smd)
-	(fp_circle
-		(center -0.8 0.4)
-		(end -0.77 0.4)
+	(fp_line
+		(start -0.254724 -0.5225)
+		(end 0.254724 -0.5225)
 		(stroke
-			(width 0.06)
+			(width 0.12)
 			(type solid)
 		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -0.254724 0.5225)
+		(end 0.254724 0.5225)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_rect
+		(start -1.65 -0.73)
+		(end 1.65 0.73)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+	)
+	(fp_rect
+		(start -0.8 -0.4125)
+		(end 0.8 0.4125)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
 		(layer "F.Fab")
-		(locked no)
-		(uuid "0f959b7d-ed89-41d0-9d37-74277f0a9c34")
 	)
-	(fp_line
-		(start 0.43 0.66)
-		(end 1.39 0.66)
-		(stroke
-			(width 0.15)
-			(type solid)
-		)
-		(layer "F.SilkS")
-		(layers "F.SilkS")
-		(locked no)
-		(uuid "85543457-778d-414f-bd5f-354a8a693e17")
-	)
-	(fp_line
-		(start 1.39 0.66)
-		(end 1.39 -0.66)
-		(stroke
-			(width 0.15)
-			(type solid)
-		)
-		(layer "F.SilkS")
-		(layers "F.SilkS")
-		(locked no)
-		(uuid "cd32d747-d2b9-49eb-bf7d-e3040c618811")
-	)
-	(fp_line
-		(start 1.39 -0.66)
-		(end 0.43 -0.66)
-		(stroke
-			(width 0.15)
-			(type solid)
-		)
-		(layer "F.SilkS")
-		(layers "F.SilkS")
-		(locked no)
-		(uuid "a012b8e2-65ee-4a6c-83b3-6ec78c9a82e2")
-	)
-	(fp_line
-		(start -0.43 0.66)
-		(end -1.39 0.66)
-		(stroke
-			(width 0.15)
-			(type solid)
-		)
-		(layer "F.SilkS")
-		(layers "F.SilkS")
-		(locked no)
-		(uuid "ef784e3c-45cb-4642-9df7-24d37282bbc2")
-	)
-	(fp_line
-		(start -1.39 0.66)
-		(end -1.39 -0.66)
-		(stroke
-			(width 0.15)
-			(type solid)
-		)
-		(layer "F.SilkS")
-		(layers "F.SilkS")
-		(locked no)
-		(uuid "cabc66f0-151c-4081-a1bf-1dbaf2a02fa0")
-	)
-	(fp_line
-		(start -1.39 -0.66)
-		(end -0.43 -0.66)
-		(stroke
-			(width 0.15)
-			(type solid)
-		)
-		(layer "F.SilkS")
-		(layers "F.SilkS")
-		(locked no)
-		(uuid "37cb97a4-213e-4312-9b08-41d50160dcec")
-	)
-	(fp_text user "%R"
-		(at 0 0)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
 		(layer "F.Fab")
-		(uuid "d603de13-a751-4197-bc2b-468a46cc1e38")
 		(effects
 			(font
-				(size 1 1)
-				(thickness 0.15)
+				(size 0.4 0.4)
+				(thickness 0.06)
 			)
 		)
 	)
-	(pad "2" smd rect
-		(at 0.75 0 0)
-		(size 0.81 0.86)
-		(layers "F.Cu" "F.Paste" "F.Mask")
-		(uuid "3cfd51a5-10f9-45c8-a74f-f966791343f6")
+	(pad "1" smd roundrect
+		(at -0.9125 0)
+		(size 0.975 0.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
 	)
-	(pad "1" smd rect
-		(at -0.75 0 0)
-		(size 0.81 0.86)
-		(layers "F.Cu" "F.Paste" "F.Mask")
-		(uuid "c02652e8-43ea-420e-86bf-c0c5815669c4")
+	(pad "2" smd roundrect
+		(at 0.9125 0)
+		(size 0.975 0.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
 	)
-	(model "${KIPRJMOD}/../../parts/UNI_ROYAL_0603WAF5101T5E/R0603.STEP"
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 		(offset
-			(xyz 0 0 -0)
+			(xyz 0 0 0)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 270)
+			(xyz 0 0 0)
 		)
 	)
-	(embedded_fonts no)
 )
