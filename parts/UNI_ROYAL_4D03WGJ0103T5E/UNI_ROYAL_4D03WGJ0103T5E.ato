@@ -1,0 +1,26 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component UNI_ROYAL_4D03WGJ0103T5E_package:
+    """10KΩ (103) ±5%"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C29718", date="2026-02-18T21:21:38.270906+00:00", checksum="3ccffcccab648609c66a4cd94de12b23cf8bd71f80ce056ca54888a573f628a8">
+
+    trait is_atomic_part<manufacturer="UNI-ROYAL", partnumber="4D03WGJ0103T5E", footprint="RES-ARRAY-SMD_0603-8P-L3.2-W1.6-BL.kicad_mod", symbol="4D03WGJ0103T5E.kicad_sym", model="R0603-8P_L3.2-W1.6-H0.6.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C29718", manufacturer="UNI-ROYAL", partno="4D03WGJ0103T5E">
+    trait has_designator_prefix<prefix="RN">
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 5
+    pin 6
+    pin 7
+    pin 8

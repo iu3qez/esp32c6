@@ -10,6 +10,7 @@ from "parts/HONGLITRONIC_PSC_1608U52GC_G4/HONGLITRONIC_PSC_1608U52GC_G4.ato" imp
 from "parts/Slkor_1N5817W/Slkor_1N5817W.ato" import Slkor_1N5817W_package
 from "parts/BZCN_TSA061B2808B/BZCN_TSA061B2808B.ato" import BZCN_TSA061B2808B_package
 from "parts/chxunda_XD_XHD_2_4A/chxunda_XD_XHD_2_4A.ato" import chxunda_XD_XHD_2_4A_package
+from "parts/UNI_ROYAL_4D03WGJ0103T5E/UNI_ROYAL_4D03WGJ0103T5E.ato" import UNI_ROYAL_4D03WGJ0103T5E_package
 from "atopile/mounting-holes/parts/MountingHole_3_2_M3_Pad/MountingHole_3_2_M3_Pad.ato" import MountingHole_3_2_M3_Pad_package
 from "parts/Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350/Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350.ato" import Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350_package
 
@@ -205,40 +206,24 @@ module App:
     header.7 ~ esp32.IO5
     header.8 ~ esp32.IO6
 
-    gpio_pullup_0 = new Resistor
-    gpio_pullup_0.resistance = 10kohm +/- 5%
-    gpio_pullup_0.package = "0603"
-    power_3v3.hv ~> gpio_pullup_0 ~> esp32.IO0
+    # ========== GPIO Pullup Arrays (C29718: 4x 10kohm, pairs 1-8, 2-7, 3-6, 4-5) ==========
+    rn1 = new UNI_ROYAL_4D03WGJ0103T5E_package
+    rn1.1 ~ power_3v3.hv
+    rn1.2 ~ power_3v3.hv
+    rn1.3 ~ power_3v3.hv
+    rn1.4 ~ power_3v3.hv
+    rn1.8 ~ esp32.IO0
+    rn1.7 ~ esp32.IO1
+    rn1.6 ~ esp32.IO2
+    rn1.5 ~ esp32.IO3
 
-    gpio_pullup_1 = new Resistor
-    gpio_pullup_1.resistance = 10kohm +/- 5%
-    gpio_pullup_1.package = "0603"
-    power_3v3.hv ~> gpio_pullup_1 ~> esp32.IO1
-
-    gpio_pullup_2 = new Resistor
-    gpio_pullup_2.resistance = 10kohm +/- 5%
-    gpio_pullup_2.package = "0603"
-    power_3v3.hv ~> gpio_pullup_2 ~> esp32.IO2
-
-    gpio_pullup_3 = new Resistor
-    gpio_pullup_3.resistance = 10kohm +/- 5%
-    gpio_pullup_3.package = "0603"
-    power_3v3.hv ~> gpio_pullup_3 ~> esp32.IO3
-
-    gpio_pullup_4 = new Resistor
-    gpio_pullup_4.resistance = 10kohm +/- 5%
-    gpio_pullup_4.package = "0603"
-    power_3v3.hv ~> gpio_pullup_4 ~> esp32.IO4
-
-    gpio_pullup_5 = new Resistor
-    gpio_pullup_5.resistance = 10kohm +/- 5%
-    gpio_pullup_5.package = "0603"
-    power_3v3.hv ~> gpio_pullup_5 ~> esp32.IO5
-
-    gpio_pullup_6 = new Resistor
-    gpio_pullup_6.resistance = 10kohm +/- 5%
-    gpio_pullup_6.package = "0603"
-    power_3v3.hv ~> gpio_pullup_6 ~> esp32.IO6
+    rn2 = new UNI_ROYAL_4D03WGJ0103T5E_package
+    rn2.1 ~ power_3v3.hv
+    rn2.2 ~ power_3v3.hv
+    rn2.3 ~ power_3v3.hv
+    rn2.8 ~ esp32.IO4
+    rn2.7 ~ esp32.IO5
+    rn2.6 ~ esp32.IO6
 
     # ========== Auto-Reset Circuit (cross-coupled NPN, ESP32-DevKitC style) ==========
     # Q1: nRTS drives base, collector=nDTR, emitter=EN
