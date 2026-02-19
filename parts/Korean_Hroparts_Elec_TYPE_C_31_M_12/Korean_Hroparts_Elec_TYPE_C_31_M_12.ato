@@ -10,10 +10,10 @@ component Korean_Hroparts_Elec_TYPE_C_31_M_12_package:
     # pins
     signal CC1 ~ pin A5
     signal CC2 ~ pin B5
-    signal DN1 ~ pin A7
-    signal DN2 ~ pin B7
-    signal DP1 ~ pin A6
-    signal DP2 ~ pin B6
+    signal D_N ~ pin A7
+    D_N ~ pin B7
+    signal D_P ~ pin A6
+    D_P ~ pin B6
     signal EH ~ pin 4
     EH ~ pin 3
     EH ~ pin 2

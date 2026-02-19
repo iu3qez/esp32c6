@@ -113,10 +113,8 @@ module App:
     esp32.EN ~> en_cap ~> power_3v3.lv
 
     # Native USB (IO12=D-, IO13=D+)
-    usb_esp.DN1 ~ esp32.IO12
-    usb_esp.DN2 ~ esp32.IO12
-    usb_esp.DP1 ~ esp32.IO13
-    usb_esp.DP2 ~ esp32.IO13
+    usb_esp.D_P ~ esp32.IO13
+    usb_esp.D_N ~ esp32.IO12
 
     # ========== CH340G USB-UART Bridge ==========
     # Power: 5V on VCC, internal 3.3V on V3
@@ -151,11 +149,9 @@ module App:
     xtal_c2.package = "0603"
     crystal.OSC2 ~> xtal_c2 ~> power_5v.lv
 
-    # USB from debug connector
-    usb_debug.DP1 ~ ch340g.UDpos
-    usb_debug.DP2 ~ ch340g.UDpos
-    usb_debug.DN1 ~ ch340g.UDneg
-    usb_debug.DN2 ~ ch340g.UDneg
+    # USB Debug (CH340G)
+    usb_debug.D_P ~ ch340g.UD_P
+    usb_debug.D_N ~ ch340g.UD_N
 
     # UART: CH340G TX->ESP32 RX, CH340G RX<-ESP32 TX
     ch340g.TXD ~ esp32.RXD0
@@ -207,23 +203,25 @@ module App:
     header.8 ~ esp32.IO6
 
     # ========== GPIO Pullup Arrays (C29718: 4x 10kohm, pairs 1-8, 2-7, 3-6, 4-5) ==========
+    # RN1: IO6-IO3 (header left side, pins 8/7/6/5) - descending L→R matches header
     rn1 = new UNI_ROYAL_4D03WGJ0103T5E_package
     rn1.1 ~ power_3v3.hv
     rn1.2 ~ power_3v3.hv
     rn1.3 ~ power_3v3.hv
     rn1.4 ~ power_3v3.hv
-    rn1.8 ~ esp32.IO0
-    rn1.7 ~ esp32.IO1
-    rn1.6 ~ esp32.IO2
+    rn1.8 ~ esp32.IO6
+    rn1.7 ~ esp32.IO5
+    rn1.6 ~ esp32.IO4
     rn1.5 ~ esp32.IO3
 
+    # RN2: IO2-IO0 (header right side, pins 4/3/2) - descending L→R matches header
     rn2 = new UNI_ROYAL_4D03WGJ0103T5E_package
     rn2.1 ~ power_3v3.hv
     rn2.2 ~ power_3v3.hv
     rn2.3 ~ power_3v3.hv
-    rn2.8 ~ esp32.IO4
-    rn2.7 ~ esp32.IO5
-    rn2.6 ~ esp32.IO6
+    rn2.8 ~ esp32.IO2
+    rn2.7 ~ esp32.IO1
+    rn2.6 ~ esp32.IO0
 
     # ========== Auto-Reset Circuit (cross-coupled NPN, ESP32-DevKitC style) ==========
     # Q1: nRTS drives base, collector=nDTR, emitter=EN

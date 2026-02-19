@@ -282,6 +282,14 @@
       {
         "netclass": "USB",
         "pattern": "UD*"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "A6"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "A7"
       }
     ]
   },

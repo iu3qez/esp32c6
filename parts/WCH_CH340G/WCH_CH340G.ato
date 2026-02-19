@@ -12,8 +12,8 @@ component WCH_CH340G_package:
     signal R232 ~ pin 15
     signal RXD ~ pin 3
     signal TXD ~ pin 2
-    signal UDneg ~ pin 6
-    signal UDpos ~ pin 5
+    signal UD_N ~ pin 6
+    signal UD_P ~ pin 5
     signal V3 ~ pin 4
     signal VCC ~ pin 16
     signal XI ~ pin 7
