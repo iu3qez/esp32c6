@@ -1,7 +1,7 @@
 #pragma experiment("BRIDGE_CONNECT")
 
 # Part imports
-from "parts/Espressif_Systems_ESP32_C6_MINI_1_N4/Espressif_Systems_ESP32_C6_MINI_1_N4.ato" import Espressif_Systems_ESP32_C6_MINI_1_N4_package
+from "parts/Espressif_Systems_ESP32_C6_WROOM_1_N8/Espressif_Systems_ESP32_C6_WROOM_1_N8.ato" import Espressif_Systems_ESP32_C6_WROOM_1_N8_package
 from "parts/Korean_Hroparts_Elec_TYPE_C_31_M_12/Korean_Hroparts_Elec_TYPE_C_31_M_12.ato" import Korean_Hroparts_Elec_TYPE_C_31_M_12_package
 from "parts/UMW_AMS1117_3_3/UMW_AMS1117_3_3.ato" import UMW_AMS1117_3_3_package
 from "parts/WCH_CH340G/WCH_CH340G.ato" import WCH_CH340G_package
@@ -25,7 +25,7 @@ module App:
     power_3v3 = new ElectricPower
 
     # ========== Main Components ==========
-    esp32 = new Espressif_Systems_ESP32_C6_MINI_1_N4_package
+    esp32 = new Espressif_Systems_ESP32_C6_WROOM_1_N8_package
     usb_esp = new Korean_Hroparts_Elec_TYPE_C_31_M_12_package
     usb_debug = new Korean_Hroparts_Elec_TYPE_C_31_M_12_package
     ldo = new UMW_AMS1117_3_3_package

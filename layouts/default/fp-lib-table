@@ -36,6 +36,13 @@
         (descr "atopile: part lib: Espressif_Systems_ESP32_C6_MINI_1_N4")
     )
     (lib
+        (name "Espressif_Systems_ESP32_C6_WROOM_1_N8")
+        (type "KiCad")
+        (uri "${KIPRJMOD}/../../parts/Espressif_Systems_ESP32_C6_WROOM_1_N8")
+        (options "")
+        (descr "atopile: part lib: Espressif_Systems_ESP32_C6_WROOM_1_N8")
+    )
+    (lib
         (name "HONGLITRONIC_PSC_1608U52GC_G4")
         (type "KiCad")
         (uri "${KIPRJMOD}/../../parts/HONGLITRONIC_PSC_1608U52GC_G4")
