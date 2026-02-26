@@ -7,6 +7,8 @@ paths:
 builds:
   default:
     entry: main.ato:App
+  keypad:
+    entry: keypad.ato:Keypad
 
 # This metadata is only required for publishing
 # Uncomment it and fill out the fields to publish your package
@@ -24,3 +26,6 @@ dependencies:
 - type: registry
   identifier: atopile/mounting-holes
   release: 0.2.0
+- type: registry
+  identifier: atopile/opsco-sk6805-ec20
+  release: 0.3.1

@@ -9,7 +9,7 @@ from "parts/Yangxing_Tech_X322512MSB4SI/Yangxing_Tech_X322512MSB4SI.ato" import 
 from "parts/HONGLITRONIC_PSC_1608U52GC_G4/HONGLITRONIC_PSC_1608U52GC_G4.ato" import HONGLITRONIC_PSC_1608U52GC_G4_package
 from "parts/Slkor_1N5817W/Slkor_1N5817W.ato" import Slkor_1N5817W_package
 from "parts/BZCN_TSA061B2808B/BZCN_TSA061B2808B.ato" import BZCN_TSA061B2808B_package
-from "parts/chxunda_XD_XHD_2_4A/chxunda_XD_XHD_2_4A.ato" import chxunda_XD_XHD_2_4A_package
+from "parts/BOOMELE_2_54_1_10P/BOOMELE_2_54_1_10P.ato" import BOOMELE_2_54_1_10P_package
 from "parts/UNI_ROYAL_4D03WGJ0103T5E/UNI_ROYAL_4D03WGJ0103T5E.ato" import UNI_ROYAL_4D03WGJ0103T5E_package
 from "atopile/mounting-holes/parts/MountingHole_3_2_M3_Pad/MountingHole_3_2_M3_Pad.ato" import MountingHole_3_2_M3_Pad_package
 from "parts/Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350/Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350.ato" import Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350_package
@@ -187,20 +187,27 @@ module App:
     boot_pullup.package = "0603"
     power_3v3.hv ~> boot_pullup ~> esp32.IO9
 
-    # ========== GPIO Header (2x4) ==========
-    header = new chxunda_XD_XHD_2_4A_package
+    # ========== GPIO Header (1x10, 2.54mm) ==========
+    header = new BOOMELE_2_54_1_10P_package
 
     # Pin 1 = GND
     header.1 ~ power_3v3.lv
 
-    # Pins 2-8 = free GPIOs with pullups
+    # Pins 2-7 = GPIOs with pullups (switches on keypad)
     header.2 ~ esp32.IO0
     header.3 ~ esp32.IO1
     header.4 ~ esp32.IO2
     header.5 ~ esp32.IO3
     header.6 ~ esp32.IO4
     header.7 ~ esp32.IO5
+
+    # Pin 8 = IO6 (LED data on keypad)
     header.8 ~ esp32.IO6
+
+    # Pin 9 = 5V (LED power on keypad)
+    header.9 ~ power_5v.hv
+
+    # Pin 10 = spare
 
     # ========== GPIO Pullup Arrays (C29718: 4x 10kohm, pairs 1-8, 2-7, 3-6, 4-5) ==========
     # RN1: IO6-IO3 (header left side, pins 8/7/6/5) - descending L→R matches header

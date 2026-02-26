@@ -1,6 +1,13 @@
 (fp_lib_table
     (version 7)
     (lib
+        (name "BOOMELE_2_54_1_10P")
+        (type "KiCad")
+        (uri "${KIPRJMOD}/../../parts/BOOMELE_2_54_1_10P")
+        (options "")
+        (descr "atopile: part lib: BOOMELE_2_54_1_10P")
+    )
+    (lib
         (name "BZCN_TSA061B2808B")
         (type "KiCad")
         (uri "${KIPRJMOD}/../../parts/BZCN_TSA061B2808B")
@@ -13,6 +20,13 @@
         (uri "${KIPRJMOD}/../../parts/Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350")
         (options "")
         (descr "atopile: part lib: Changjiang_Electronics_Tech_S8050_J3Y_RANGE_200_350")
+    )
+    (lib
+        (name "Ckmtw_B_2200S04P_A120")
+        (type "KiCad")
+        (uri "${KIPRJMOD}/../../parts/Ckmtw_B_2200S04P_A120")
+        (options "")
+        (descr "atopile: part lib: Ckmtw_B_2200S04P_A120")
     )
     (lib
         (name "Espressif_Systems_ESP32_C6_MINI_1_N4")
@@ -29,11 +43,25 @@
         (descr "atopile: part lib: HONGLITRONIC_PSC_1608U52GC_G4")
     )
     (lib
+        (name "Kailh_CPG135001D01")
+        (type "KiCad")
+        (uri "${KIPRJMOD}/../../parts/Kailh_CPG135001D01")
+        (options "")
+        (descr "atopile: part lib: Kailh_CPG135001D01")
+    )
+    (lib
         (name "Korean_Hroparts_Elec_TYPE_C_31_M_12")
         (type "KiCad")
         (uri "${KIPRJMOD}/../../parts/Korean_Hroparts_Elec_TYPE_C_31_M_12")
         (options "")
         (descr "atopile: part lib: Korean_Hroparts_Elec_TYPE_C_31_M_12")
+    )
+    (lib
+        (name "Samsung_Electro_Mechanics_CL05B104KO5NNNC")
+        (type "KiCad")
+        (uri "${KIPRJMOD}/../../parts/Samsung_Electro_Mechanics_CL05B104KO5NNNC")
+        (options "")
+        (descr "atopile: part lib: Samsung_Electro_Mechanics_CL05B104KO5NNNC")
     )
     (lib
         (name "Samsung_Electro_Mechanics_CL10A105KB8NNNC")
