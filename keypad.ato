@@ -1,0 +1,76 @@
+#pragma experiment("BRIDGE_CONNECT")
+#pragma experiment("FOR_LOOP")
+#pragma experiment("MODULE_TEMPLATING")
+
+from "parts/Kailh_CPG135001D01/Kailh_CPG135001D01.ato" import Kailh_CPG135001D01_package
+from "parts/BOOMELE_2_54_1_10P/BOOMELE_2_54_1_10P.ato" import BOOMELE_2_54_1_10P_package
+from "atopile/opsco-sk6805-ec20/opsco-sk6805-ec20.ato" import OPSCO_SK6805_EC20
+
+import ElectricPower
+import ElectricLogic
+
+module Keypad:
+    # ========== Connector (1x10, 2.54mm - matches main board) ==========
+    header = new BOOMELE_2_54_1_10P_package
+
+    # ========== Power rails ==========
+    power_5v = new ElectricPower
+    power_5v.hv ~ header.9
+    power_5v.lv ~ header.1
+
+    # ========== 6 Kailh Choc switches ==========
+    sw1 = new Kailh_CPG135001D01_package
+    sw2 = new Kailh_CPG135001D01_package
+    sw3 = new Kailh_CPG135001D01_package
+    sw4 = new Kailh_CPG135001D01_package
+    sw5 = new Kailh_CPG135001D01_package
+    sw6 = new Kailh_CPG135001D01_package
+
+    # Pin 1 = GND
+    # Pin 2-7 = IO0-IO5 -> switches
+    # Pin 8 = IO6 -> LED data
+    # Pin 9 = 5V -> LED power
+    # Pin 10 = spare
+
+    # Each switch: GPIO -> switch -> GND
+    header.2 ~ sw1.1
+    sw1.2 ~ header.1
+
+    header.3 ~ sw2.1
+    sw2.2 ~ header.1
+
+    header.4 ~ sw3.1
+    sw3.2 ~ header.1
+
+    header.5 ~ sw4.1
+    sw4.2 ~ header.1
+
+    header.6 ~ sw5.1
+    sw5.2 ~ header.1
+
+    header.7 ~ sw6.1
+    sw6.2 ~ header.1
+
+    # ========== 6 SK6805-EC20 addressable RGB LEDs (reverse-mount) ==========
+    led1 = new OPSCO_SK6805_EC20
+    led2 = new OPSCO_SK6805_EC20
+    led3 = new OPSCO_SK6805_EC20
+    led4 = new OPSCO_SK6805_EC20
+    led5 = new OPSCO_SK6805_EC20
+    led6 = new OPSCO_SK6805_EC20
+
+    # Power all LEDs from 5V rail
+    power_5v ~ led1.power
+    power_5v ~ led2.power
+    power_5v ~ led3.power
+    power_5v ~ led4.power
+    power_5v ~ led5.power
+    power_5v ~ led6.power
+
+    # Data input from IO6 (pin 8)
+    led_data = new ElectricLogic
+    led_data.line ~ header.8
+    led_data.reference ~ power_5v
+
+    # Daisy-chain: IO6 -> LED1 -> LED2 -> LED3 -> LED4 -> LED5 -> LED6
+    led_data ~> led1 ~> led2 ~> led3 ~> led4 ~> led5 ~> led6
