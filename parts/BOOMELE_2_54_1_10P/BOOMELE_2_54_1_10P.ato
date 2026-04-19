@@ -1,0 +1,28 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component BOOMELE_2_54_1_10P_package:
+    """2.54mm 1*10P"""
+
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C57369", date="2026-02-21T08:41:50.815179+00:00", checksum="b3438c49980bae37a28675e1ad006a59a5ed7bf09463980496a23e6effc4af2e">
+
+    trait is_atomic_part<manufacturer="BOOMELE", partnumber="2.54-1*10P针", footprint="HDR-TH_10P-P2.54-V-M-1.kicad_mod", symbol="Header-Male-2.54_1x10.kicad_sym", model="HDR2.54-M-LI-1X10P.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C57369", manufacturer="BOOMELE", partno="2.54-1*10P针">
+    trait has_designator_prefix<prefix="H">
+
+    # pins
+    pin 1
+    pin 2
+    pin 3
+    pin 4
+    pin 5
+    pin 6
+    pin 7
+    pin 8
+    pin 9
+    pin 10

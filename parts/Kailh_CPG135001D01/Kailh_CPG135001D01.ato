@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Kailh_CPG135001D01_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C400229", date="2026-02-21T08:34:59.986877+00:00", checksum="39bd7b2744ba1053d833e62720a501ea0dcbc28e55a4a51ee6a68285480011fe">
+
+    trait is_atomic_part<manufacturer="Kailh", partnumber="CPG135001D01", footprint="KEY-TH_CPG135001D0X.kicad_mod", symbol="CPG135001D01.kicad_sym", model="KEY-TH_CPG135001D0X.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C400229", manufacturer="Kailh", partno="CPG135001D01">
+    trait has_designator_prefix<prefix="SW">
+
+    # pins
+    pin 1
+    pin 2

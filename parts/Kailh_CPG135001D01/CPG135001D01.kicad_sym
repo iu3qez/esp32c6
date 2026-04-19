@@ -1,0 +1,189 @@
+(kicad_symbol_lib
+    (version 1)
+    (generator "faebryk")
+    (symbol "CPG135001D01"
+        (property "Reference" "SW"
+            (id 0)
+            (at 0 2.54 0)
+            (effects
+                (font
+                    (size 1.27 1.27)
+                )
+                (hide no)
+            )
+        )
+        (property "Value" "CPG135001D01"
+            (id 1)
+            (at 0 -7.62 0)
+            (effects
+                (font
+                    (size 1.27 1.27)
+                )
+                (hide no)
+            )
+        )
+        (property "Footprint" "C400229:KEY-TH_CPG135001D0X"
+            (id 2)
+            (at 0 -10.16 0)
+            (effects
+                (font
+                    (size 1.27 1.27)
+                )
+                (hide yes)
+            )
+        )
+        (property "Datasheet" "https://lcsc.com/product-detail/Tactile-Switches_Kailh-CPG135001D01_C400229.html"
+            (id 3)
+            (at 0 -12.7 0)
+            (effects
+                (font
+                    (size 1.27 1.27)
+                )
+                (hide yes)
+            )
+        )
+        (property "LCSC Part" "C400229"
+            (id 5)
+            (at 0 -15.24 0)
+            (effects
+                (font
+                    (size 1.27 1.27)
+                )
+                (hide yes)
+            )
+        )
+        (property "checksum" "48bb841990be05a8ceab5a76fd3eb3a8767747d9cf550f794f8e95d670acf41f"
+            (at 0 0 0)
+            (effects
+                (font
+                    (size 0 0)
+                )
+                (hide yes)
+            )
+        )
+        (in_bom yes)
+        (on_board yes)
+        (symbol "CPG135001D01_0_1"
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+                (pts
+                    (xy 0 -0.76)
+                    (xy 0 1.02)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+                (pts
+                    (xy -2.29 -0.76)
+                    (xy 2.29 -0.76)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+                (pts
+                    (xy 5.08 -2.54)
+                    (xy 2.54 -2.54)
+                )
+            )
+            (polyline
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+                (pts
+                    (xy -5.08 -2.54)
+                    (xy -2.54 -2.54)
+                )
+            )
+            (circle
+                (center 2.03 -2.54)
+                (end 2.54 -2.54)
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+            )
+            (circle
+                (center -2.03 -2.54)
+                (end -1.5199999999999998 -2.54)
+                (stroke
+                    (width 0)
+                    (type default)
+                    (color 0 0 0 0)
+                )
+                (fill
+                    (type none)
+                )
+            )
+            (pin unspecified line
+                (at -7.62 -2.54 0)
+                (length 3.81)
+                (name "1"
+                    (effects
+                        (font
+                            (size 1.27 1.27)
+                        )
+                        (hide no)
+                    )
+                )
+                (number "1"
+                    (effects
+                        (font
+                            (size 1.27 1.27)
+                        )
+                        (hide no)
+                    )
+                )
+            )
+            (pin unspecified line
+                (at 7.62 -2.54 180)
+                (length 3.81)
+                (name "2"
+                    (effects
+                        (font
+                            (size 1.27 1.27)
+                        )
+                        (hide no)
+                    )
+                )
+                (number "2"
+                    (effects
+                        (font
+                            (size 1.27 1.27)
+                        )
+                        (hide no)
+                    )
+                )
+            )
+        )
+    )
+)

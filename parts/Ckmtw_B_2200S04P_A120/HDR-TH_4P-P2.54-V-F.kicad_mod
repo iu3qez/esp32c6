@@ -1,0 +1,170 @@
+(footprint "Ckmtw_B_2200S04P_A120:HDR-TH_4P-P2.54-V-F"
+    (layer "F.Cu")
+    (descr "")
+    (version 20241229)
+    (generator "faebryk")
+    (generator_version "v5")
+    (tedit "5DC5F6A4")
+    (property "Reference" "REF**"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (hide no)
+        (uuid "b90ac376-c0e4-4c28-9004-2c41b99ea74a")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "Value" "HDR-TH_4P-P2.54-V-F"
+        (at 0 4 0)
+        (layer "F.Fab")
+        (hide no)
+        (uuid "1ca8dd5c-7e6f-496c-9003-5d6d091f321a")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+    )
+    (property "checksum" "09dcb1a69dc2a047bdbbca01d889c2bf3df1e44d8df68bb867f15e4b9964b171"
+        (at 0 0 0)
+        (layer "User.9")
+        (hide no)
+        (uuid "63e6471e-db69-4bad-b562-30e4916fec23")
+        (effects
+            (font
+                (size 0.125 0.125)
+                (thickness 0.01875)
+            )
+            (hide yes)
+        )
+    )
+    (attr through_hole)
+    (fp_line
+        (start 5.29 -1.27)
+        (end 5.29 1.27)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "29347ffb-448e-4933-8e2e-ec244ed0454c")
+    )
+    (fp_line
+        (start -5.29 -1.27)
+        (end 5.29 -1.27)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "31913014-bc7b-4b7a-9006-ef1bb571719c")
+    )
+    (fp_line
+        (start -2.52 -1.27)
+        (end -2.52 1.27)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "cd96e71e-7c73-448c-a627-8621e882d85e")
+    )
+    (fp_line
+        (start -5.29 1.27)
+        (end 5.29 1.27)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "bdc5b1f8-7314-43ca-8094-5c5acd571b17")
+    )
+    (fp_line
+        (start -5.29 -1.27)
+        (end -5.29 1.27)
+        (stroke
+            (width 0.25)
+            (type solid)
+        )
+        (layer "F.SilkS")
+        (uuid "61e451c4-1ddc-433a-8049-979ba4e37a84")
+    )
+    (fp_circle
+        (center -5.25 1.25)
+        (end -5.22 1.25)
+        (stroke
+            (width 0.06)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.Fab")
+        (uuid "7a88f525-0597-4e61-8747-13c86fcea694")
+    )
+    (fp_text user "%R"
+        (at 0 0 0)
+        (layer "F.Fab")
+        (uuid "aca2e57b-5672-4346-a0f6-879c2730db9b")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (fp_text user "${REFERENCE}"
+        (at 0 -4 0)
+        (layer "F.SilkS")
+        (uuid "b90ac376-c0e4-4c28-9004-2c41b99ea74a")
+        (effects
+            (font
+                (size 1 1)
+                (thickness 0.15)
+            )
+        )
+        (unlocked no)
+    )
+    (pad "1" thru_hole rect
+        (at -3.81 0 0)
+        (size 1.7 1.7)
+        (drill 1.1000231999999999)
+        (layers "*.Cu" "*.Mask")
+        (uuid "7fc0c467-35e4-498a-a2b1-981f74e37569")
+    )
+    (pad "2" thru_hole circle
+        (at -1.27 0 0)
+        (size 1.7 1.7)
+        (drill 1.1000231999999999)
+        (layers "*.Cu" "*.Mask")
+        (uuid "b8f11658-5194-45f8-b384-3345ab978dfd")
+    )
+    (pad "3" thru_hole circle
+        (at 1.27 0 0)
+        (size 1.7 1.7)
+        (drill 1.1000231999999999)
+        (layers "*.Cu" "*.Mask")
+        (uuid "82d68f9c-7009-4d6e-8e0d-dcbc153cf6e3")
+    )
+    (pad "4" thru_hole circle
+        (at 3.81 0 0)
+        (size 1.7 1.7)
+        (drill 1.1000231999999999)
+        (layers "*.Cu" "*.Mask")
+        (uuid "127eb685-86b8-4012-9a93-fca44c4c6e70")
+    )
+    (model "${KIPRJMOD}/../../parts/Ckmtw_B_2200S04P_A120/HDR-TH_4P-P2.54-V-F.step"
+        (offset
+            (xyz 0 0 0)
+        )
+        (scale
+            (xyz 1 1 1)
+        )
+        (rotate
+            (xyz 0 0 0)
+        )
+    )
+)
