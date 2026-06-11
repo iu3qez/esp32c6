@@ -1,0 +1,13 @@
+"""Kailh Choc CPG135001D01 low-profile key switch (through-hole, hot-swap compatible)."""
+
+P1 = io(Net)
+P2 = io(Net)
+
+Component(
+    name="KailhChoc",
+    symbol=Symbol(library="./CPG135001D01.kicad_sym"),
+    footprint="./KEY-TH_CPG135001D0X.kicad_mod",
+    part=Part(mpn="CPG135001D01", manufacturer="Kailh"),
+    properties={"LCSC": "C400229"},
+    pins={"1": P1, "2": P2},
+)
