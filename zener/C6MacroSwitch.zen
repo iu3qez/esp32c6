@@ -2,12 +2,107 @@
 C6MacroSwitch — ESP32-C6 Zigbee battery-powered macro switch
 """
 
+load("@stdlib/interfaces.zen", "Usb2")
+
+Resistor = Module("@stdlib/generics/Resistor.zen")
+Capacitor = Module("@stdlib/generics/Capacitor.zen")
+Led = Module("@stdlib/generics/Led.zen")
+PinHeader = Module("@stdlib/generics/PinHeader.zen")
+
+Esp32 = Module("./components/ESP32C6WROOM1N8/ESP32C6WROOM1N8.zen")
+UsbC = Module("./components/TYPEC31M12/TYPEC31M12.zen")
+Choc = Module("./components/KailhChoc/KailhChoc.zen")
+Tactile = Module("./components/TactileTSA061B/TactileTSA061B.zen")
+Schottky = Module("./components/SS1N5817W/SS1N5817W.zen")
+Ldo = Module("./components/XC6220B331MR/XC6220B331MR.zen")
+Charger = Module("./components/MCP73831/MCP73831.zen")
+JstPh = Module("./components/S2BPHKS/S2BPHKS.zen")
+
 Board(
     name="C6MacroSwitch",
     layout_path="layout/C6MacroSwitch",
     layers=2,
 )
 
-VBAT = Power("VBAT")
-VDD_3V3 = Power("3V3")
 GND = Ground("GND")
+VBAT = Power("VBAT")  # Battery side, before current-measure jumper
+VBAT_SW = Power("VBAT_SW")  # After jumper, LDO input
+VDD_3V3 = Power("3V3", voltage="3.3V")
+VBUS = Power("VBUS")
+
+usb = Usb2("USB")
+CC1 = Net("CC1")
+CC2 = Net("CC2")
+EN = Net("EN")
+BOOT = Net("BOOT")
+VBAT_SENSE = Net("VBAT_SENSE")
+LED = Net("LED")
+LED_A = Net("LED_A")
+CHG_STAT = Net("CHG_STAT")
+CHG_PROG = Net("CHG_PROG")
+CHG_LED_A = Net("CHG_LED_A")
+KEYS = [Net("KEY%d" % (i + 1)) for i in range(6)]
+
+# Battery -> current-measure jumper -> LDO -> 3V3
+JstPh(name="J_BAT", P1=VBAT, P2=GND)
+PinHeader(name="J_IMEAS", pins=2, pitch="2.54mm", mount="THT", P1=VBAT, P2=VBAT_SW)
+Ldo(name="U2", VIN=VBAT_SW, VOUT=VDD_3V3, GND=GND, CE=VBAT_SW)
+Capacitor(name="C_LDO_IN", value="1uF", package="0603", P1=VBAT_SW, P2=GND)
+Capacitor(name="C_LDO_OUT", value="1uF", package="0603", P1=VDD_3V3, P2=GND)
+
+# USB-C: native USB data to ESP32, VBUS to charger (DNP) and Schottky (DNP)
+UsbC(name="J_USB", VBUS=VBUS, GND=GND, USB=usb, CC1=CC1, CC2=CC2, SHIELD=GND)
+Resistor(name="R_CC1", value="5.1kohm", package="0603", P1=CC1, P2=GND)
+Resistor(name="R_CC2", value="5.1kohm", package="0603", P1=CC2, P2=GND)
+
+# USB-power-without-battery option (DNP)
+Schottky(name="D_USB_PWR", A=VBUS, K=VBAT_SW, dnp=True)
+
+# Charger (all DNP on first boards)
+Charger(name="U3", VDD=VBUS, VBAT=VBAT, VSS=GND, STAT=CHG_STAT, PROG=CHG_PROG, dnp=True)
+Resistor(name="R_PROG", value="2kohm", package="0603", P1=CHG_PROG, P2=GND, dnp=True)  # ~500mA charge
+Resistor(name="R_CHG_LED", value="1kohm", package="0603", P1=VBUS, P2=CHG_LED_A, dnp=True)
+Led(name="D_CHG", color="red", package="0402", A=CHG_LED_A, K=CHG_STAT, dnp=True)  # STAT sinks when charging
+
+# ESP32-C6
+Esp32(
+    name="U1",
+    P3V3=VDD_3V3,
+    GND=GND,
+    EN=EN,
+    IO0=KEYS[0],
+    IO1=KEYS[1],
+    IO2=KEYS[2],
+    IO3=KEYS[3],
+    IO4=KEYS[4],
+    IO5=KEYS[5],
+    IO6=VBAT_SENSE,
+    IO8=LED,
+    IO9=BOOT,
+    IO12=usb.D.N,
+    IO13=usb.D.P,
+)
+Capacitor(name="C_ESP_BULK", value="10uF", package="0603", P1=VDD_3V3, P2=GND)
+Capacitor(name="C_ESP_DEC", value="100nF", package="0603", P1=VDD_3V3, P2=GND)
+
+# EN: pullup + RC + reset button
+Resistor(name="R_EN", value="10kohm", package="0603", P1=VDD_3V3, P2=EN)
+Capacitor(name="C_EN", value="1uF", package="0603", P1=EN, P2=GND)
+Tactile(name="SW_RST", P1=EN, P2=GND)
+
+# Boot button + pullup on IO9
+Resistor(name="R_BOOT", value="10kohm", package="0603", P1=VDD_3V3, P2=BOOT)
+Tactile(name="SW_BOOT", P1=BOOT, P2=GND)
+
+# 6 Kailh Choc macro keys: GPIO -> switch -> GND (internal pullups, LP-GPIO deep-sleep wake)
+for i in range(6):
+    Choc(name="SW%d" % (i + 1), P1=KEYS[i], P2=GND)
+
+# Status LED on IO8
+Resistor(name="R_LED", value="1kohm", package="0603", P1=LED, P2=LED_A)
+Led(name="D_LED", color="green", package="0402", A=LED_A, K=GND)
+
+# Battery voltage divider on ADC (IO6/GPIO6) — high impedance + filter
+Resistor(name="R_VBAT_TOP", value="1Mohm", package="0603", P1=VBAT_SW, P2=VBAT_SENSE)
+Resistor(name="R_VBAT_BOT", value="1Mohm", package="0603", P1=VBAT_SENSE, P2=GND)
+Capacitor(name="C_VBAT_SENSE", value="100nF", package="0603", P1=VBAT_SENSE, P2=GND)
