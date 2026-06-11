@@ -1,0 +1,13 @@
+[workspace]
+name = "esp32c6-zener"
+repository = "github.com/iu3qez/esp32c6"
+pcb-version = "0.3"
+vendor = ["github.com/diodeinc/registry/**"]
+
+[board]
+name = "C6MacroSwitch"
+path = "C6MacroSwitch.zen"
+description = "ESP32-C6 Zigbee battery-powered macro switch"
+
+[access]
+allow = ["*"]

@@ -1,0 +1,13 @@
+"""
+C6MacroSwitch — ESP32-C6 Zigbee battery-powered macro switch
+"""
+
+Board(
+    name="C6MacroSwitch",
+    layout_path="layout/C6MacroSwitch",
+    layers=2,
+)
+
+VBAT = Power("VBAT")
+VDD_3V3 = Power("3V3")
+GND = Ground("GND")
