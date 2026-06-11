@@ -1,0 +1,20 @@
+"""JST S2B-PH-K-S(LF)(SN) — PH series 2-pin side-entry shrouded header,
+2.0mm pitch, through-hole. Standard single-cell Li-Po battery connector
+(P1 = BAT+, P2 = GND by JST battery-pack convention).
+"""
+
+P1 = io(Net, help="BAT+")
+P2 = io(Net, help="GND")
+
+Component(
+    name="S2BPHKS",
+    symbol=Symbol(library="./S2B-PH-K-S.kicad_sym"),
+    footprint="./JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal.kicad_mod",
+    prefix="J",
+    part=Part(mpn="S2B-PH-K-S(LF)(SN)", manufacturer="JST Sales America"),
+    properties={"LCSC": "C173752"},
+    pins={
+        "P1": P1,
+        "P2": P2,
+    },
+)

@@ -1,0 +1,25 @@
+"""Torex XC6220B331MR-G — 1A very-low-dropout 3.3V fixed LDO, SOT-25.
+
+VIN range 1.6V to 6.0V, dropout typ. 90mV @ 300mA, IQ typ. 8uA.
+CE is active-high enable (no internal pull-up; drive or strap to VIN).
+"""
+
+VIN = io(Power)
+VOUT = io(Power(voltage="3.3V"))
+GND = io(Ground)
+CE = io(Net, help="Active-high chip enable")
+
+Component(
+    name="XC6220B331MR",
+    symbol=Symbol(library="./XC6220B331MR.kicad_sym"),
+    footprint="./SOT-23-5.kicad_mod",
+    prefix="U",
+    part=Part(mpn="XC6220B331MR-G", manufacturer="Torex Semiconductor"),
+    properties={"LCSC": "C86534"},
+    pins={
+        "VIN": VIN,
+        "GND": GND,
+        "CE": CE,
+        "VOUT": VOUT,
+    },
+)

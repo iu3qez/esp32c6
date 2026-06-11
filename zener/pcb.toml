@@ -9,5 +9,10 @@ name = "C6MacroSwitch"
 path = "C6MacroSwitch.zen"
 description = "ESP32-C6 Zigbee battery-powered macro switch"
 
+[dependencies.indirect]
+"gitlab.com/kicad/libraries/kicad-footprints@9" = "9.0.3"
+"gitlab.com/kicad/libraries/kicad-packages3D@9" = "9.0.3"
+"gitlab.com/kicad/libraries/kicad-symbols@9" = "9.0.3"
+
 [access]
 allow = ["*"]
