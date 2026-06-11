@@ -1,0 +1,65 @@
+"""ESP32-C6-WROOM-1-N8 WiFi 6 / BLE 5 / 802.15.4 module (Espressif Systems)."""
+
+EN = io(Net)
+P3V3 = io(Power(voltage="3.0V to 3.6V"))
+GND = io(Ground)
+IO0 = io(Net, optional=True)
+IO1 = io(Net, optional=True)
+IO2 = io(Net, optional=True)
+IO3 = io(Net, optional=True)
+IO4 = io(Net, optional=True)
+IO5 = io(Net, optional=True)
+IO6 = io(Net, optional=True)
+IO7 = io(Net, optional=True)
+IO8 = io(Net, optional=True)
+IO9 = io(Net, optional=True)
+IO10 = io(Net, optional=True)
+IO11 = io(Net, optional=True)
+IO12 = io(Net, optional=True)
+IO13 = io(Net, optional=True)
+IO15 = io(Net, optional=True)
+IO18 = io(Net, optional=True)
+IO19 = io(Net, optional=True)
+IO20 = io(Net, optional=True)
+IO21 = io(Net, optional=True)
+IO22 = io(Net, optional=True)
+IO23 = io(Net, optional=True)
+RXD0 = io(Net, optional=True)
+TXD0 = io(Net, optional=True)
+
+Component(
+    name="ESP32C6WROOM1N8",
+    symbol=Symbol(library="./ESP32-C6-WROOM-1-N8.kicad_sym"),
+    footprint="./WIRELM-SMD_ESP32-C6-WROOM-1.kicad_mod",
+    part=Part(mpn="ESP32-C6-WROOM-1-N8", manufacturer="Espressif Systems"),
+    properties={"LCSC": "C5366877"},
+    pins={
+        "EN": EN,
+        "3V3": P3V3,
+        "GND": GND,
+        "IO0": IO0,
+        "IO1": IO1,
+        "IO2": IO2,
+        "IO3": IO3,
+        "IO4": IO4,
+        "IO5": IO5,
+        "IO6": IO6,
+        "IO7": IO7,
+        "IO8": IO8,
+        "IO9": IO9,
+        "IO10": IO10,
+        "IO11": IO11,
+        "IO12": IO12,
+        "IO13": IO13,
+        "IO15": IO15,
+        "IO18": IO18,
+        "IO19": IO19,
+        "IO20": IO20,
+        "IO21": IO21,
+        "IO22": IO22,
+        "IO23": IO23,
+        "RXD0": RXD0,
+        "TXD0": TXD0,
+        "NC": NotConnected(),
+    },
+)
