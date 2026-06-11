@@ -16,6 +16,7 @@ Da parts/ si riusano simboli/footprint KiCad già verificati.
 
 - Modulo: ESP32-C6-WROOM-1-N8 (LCSC C5366877) — già in casa, non sostituire
 - USB-C: Korean Hroparts TYPE-C-31-M-12 (LCSC C165948)
+- Tasti macro: 6× Kailh Choc CPG135001D01 (LCSC C400229), switch meccanici
 - Resistenze e condensatori: package 0603
 - Ogni altro componente: disponibile su LCSC con stock > 0
 - LDO: very-low-dropout e low-IQ (candidato XC6220B331)

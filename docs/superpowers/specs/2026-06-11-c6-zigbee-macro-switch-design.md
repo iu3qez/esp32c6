@@ -27,10 +27,12 @@ non montato (DNP) sulle prime board.
    (LCSC **C5366877**) — già disponibile in casa.
 2. **Connettore USB-C**: identico al progetto precedente, Korean Hroparts
    TYPE-C-31-M-12 (LCSC **C165948**).
-3. **Tutti gli altri componenti**: disponibili su **LCSC con stock > 0** al
+3. **Tasti macro**: switch meccanici Kailh Choc CPG135001D01
+   (LCSC **C400229**), identici al keypad del progetto precedente.
+4. **Tutti gli altri componenti**: disponibili su **LCSC con stock > 0** al
    momento del part picking.
-4. **Resistenze e condensatori: package 0603**.
-5. Toolchain: `diodeinc/pcb` (Zener), nuovo branch `dev-zener`.
+5. **Resistenze e condensatori: package 0603**.
+6. Toolchain: `diodeinc/pcb` (Zener), nuovo branch `dev-zener`.
 
 ## Architettura
 
@@ -70,7 +72,8 @@ La scelta finale si fa in fase di picking col vincolo stock > 0.
 | Misura corrente | header 2 pin 2.54 mm + shunt | in serie al positivo batteria (a monte dell'LDO): shunt rimosso → amperometro in serie; misura il consumo totale incluso IQ dell'LDO |
 | Alimentazione da USB senza batteria | Schottky SOD-123 (DNP) | da VBUS all'ingresso LDO (a valle del jumper): permette flash/test senza batteria; DNP se non serve. L'LDO regge Vin 5 V |
 | Monitor batteria | 2× R ≥1 MΩ 0603 + C filtro | su ADC del C6 |
-| Tasti | 7× tattile SMD (6 macro + boot) + 1 reset | stesso modello per tutti, LCSC stock >0 |
+| Tasti macro | 6× Kailh Choc CPG135001D01 | LCSC **C400229**, switch meccanico low-profile come nel keypad precedente (footprint/symbol già in `parts/Kailh_CPG135001D01/`) |
+| Tasti servizio | 2× tattile SMD (reset + boot) | LCSC stock >0 |
 | LED stato | LED 0603 + R 1k 0603 | su GPIO libero |
 | EN | R 10k + C 1 µF 0603 | reset RC classico |
 
