@@ -30,7 +30,7 @@ VBAT_SW = Power("VBAT_SW")  # After jumper, LDO input
 VDD_3V3 = Power("3V3", voltage="3.3V")
 VBUS = Power("VBUS")
 
-usb = Usb2("USB")
+USB = Usb2("USB")
 CC1 = Net("CC1")
 CC2 = Net("CC2")
 EN = Net("EN")
@@ -51,7 +51,7 @@ Capacitor(name="C_LDO_IN", value="1uF", package="0603", P1=VBAT_SW, P2=GND)
 Capacitor(name="C_LDO_OUT", value="1uF", package="0603", P1=VDD_3V3, P2=GND)
 
 # USB-C: native USB data to ESP32, VBUS to charger (DNP) and Schottky (DNP)
-UsbC(name="J_USB", VBUS=VBUS, GND=GND, USB=usb, CC1=CC1, CC2=CC2, SHIELD=GND)
+UsbC(name="J_USB", VBUS=VBUS, GND=GND, USB=USB, CC1=CC1, CC2=CC2, SHIELD=GND)
 Resistor(name="R_CC1", value="5.1kohm", package="0603", P1=CC1, P2=GND)
 Resistor(name="R_CC2", value="5.1kohm", package="0603", P1=CC2, P2=GND)
 
@@ -79,8 +79,8 @@ Esp32(
     IO6=VBAT_SENSE,
     IO8=LED,
     IO9=BOOT,
-    IO12=usb.D.N,
-    IO13=usb.D.P,
+    IO12=USB.D.N,
+    IO13=USB.D.P,
 )
 Capacitor(name="C_ESP_BULK", value="10uF", package="0603", P1=VDD_3V3, P2=GND)
 Capacitor(name="C_ESP_DEC", value="100nF", package="0603", P1=VDD_3V3, P2=GND)
