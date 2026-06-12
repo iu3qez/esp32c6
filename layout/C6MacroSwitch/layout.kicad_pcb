@@ -1090,7 +1090,7 @@
 	(footprint "iu3qez_esp32c6_components_KailhChoc:KEY-TH_CPG135001D0X"
 		(layer "F.Cu")
 		(uuid "158eec04-2ac7-4ec7-8bbd-6d157d039584")
-		(at 168.125 105.45)
+		(at 143.45 63.15)
 		(property "Reference" "SW1"
 			(at 0 -5.05 0)
 			(layer "F.SilkS")
@@ -2993,7 +2993,7 @@
 	(footprint "iu3qez_esp32c6_components_KailhChoc:KEY-TH_CPG135001D0X"
 		(layer "F.Cu")
 		(uuid "2f04f2fe-75ce-4300-988b-83a96d83021d")
-		(at 184 68.65)
+		(at 181.55 63.15)
 		(property "Reference" "SW3"
 			(at 0 -5.05 0)
 			(layer "F.SilkS")
@@ -4795,7 +4795,7 @@
 	(footprint "iu3qez_esp32c6_components_KailhChoc:KEY-TH_CPG135001D0X"
 		(layer "F.Cu")
 		(uuid "58c71f9a-9e92-4406-b708-818499db72ee")
-		(at 168.125 87.07675)
+		(at 162.5 63.15)
 		(property "Reference" "SW2"
 			(at 0 -5.05 0)
 			(layer "F.SilkS")
@@ -5387,7 +5387,7 @@
 	(footprint "iu3qez_esp32c6_components_KailhChoc:KEY-TH_CPG135001D0X"
 		(layer "F.Cu")
 		(uuid "6efd0af7-b952-4b04-ad75-173552f215d9")
-		(at 184 105.45)
+		(at 143.45 82.2)
 		(property "Reference" "SW4"
 			(at 0 -5.05 0)
 			(layer "F.SilkS")
@@ -6721,7 +6721,7 @@
 	(footprint "iu3qez_esp32c6_components_KailhChoc:KEY-TH_CPG135001D0X"
 		(layer "F.Cu")
 		(uuid "b006abb2-0566-4a01-8088-09e9758f55e1")
-		(at 184 87.05)
+		(at 162.5 82.2)
 		(property "Reference" "SW5"
 			(at 0 -5.05 0)
 			(layer "F.SilkS")
@@ -9397,7 +9397,7 @@
 	(footprint "iu3qez_esp32c6_components_KailhChoc:KEY-TH_CPG135001D0X"
 		(layer "F.Cu")
 		(uuid "e8ce43ce-1e09-4a40-9ccf-7dd1ee952f80")
-		(at 168.125 68.7035)
+		(at 181.55 82.2)
 		(property "Reference" "SW6"
 			(at 0 -5.05 0)
 			(layer "F.SilkS")
