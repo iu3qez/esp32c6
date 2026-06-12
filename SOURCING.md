@@ -12,7 +12,7 @@ Stock letti dal campo `stockNumber` delle pagine prodotto lcsc.com.
 | SW_RST, SW_BOOT | TSA061B2808B (BZCN) | C20624994 | 335 | stock basso, ok per prototipi |
 | D_USB_PWR, D_RVP | 1N5817W (Slkor) | C5185908 | 12.100 | usato 2×, entrambi DNP |
 | Q_RVP | AO3401A (Alpha & Omega, P-MOSFET SOT-23) | C15127 | 354.200 (verificato 2026-06-12) | protezione inversione batteria |
-| U2 | XC6220B331MR-G (Torex, LDO 3.3V 1A) | C86534 | 9.867 | C_LDO_IN/OUT ora 10 µF (C19702, già in tabella passivi) |
+| U2 | XC6220B331MR-G (Torex, LDO 3.3V 1A) | C86534 | 9.867 | C_LDO_IN/OUT 10 µF **0805** (vedi tabella passivi) |
 | U3 | MCP73831T-2ACI/OT (Microchip, charger) | C424093 | 12.519 | DNP |
 | J_BAT | S2B-PH-K-S(LF)(SN) (JST PH 2p) | C173752 | 87.260 | |
 
@@ -27,6 +27,7 @@ Stock letti dal campo `stockNumber` delle pagine prodotto lcsc.com.
 | 100 nF 50V X7R | C77055 | Murata GRM188R71H104KA93D | 1.199.900 |
 | 1 µF 10V X7R | C95843 | Samsung CL10B105KP8NNNC | 50.000 |
 | 10 µF 10V X5R | C19702 | Samsung CL10A106KP8NNNC | 1.307.180 |
+| 10 µF 25V X7R 0805 (cap LDO) | C237493 | Murata GRM21BZ71E106KE15L | 45.475 (2026-06-13) |
 | LED verde | C125101 | Lite-On LTST-C191TGKT | 42.000 |
 
 ## Avvertenze

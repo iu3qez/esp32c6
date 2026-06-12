@@ -18,6 +18,8 @@ da KiCad 10 (github.com/atopile/atopile/issues/1822): motivo della migrazione.
 - USB-C: Korean Hroparts TYPE-C-31-M-12 (LCSC C165948)
 - Tasti macro: 6× Kailh Choc CPG135001D01 (LCSC C400229), switch meccanici
 - Resistenze, condensatori e LED: package 0603 o più grande — MAI 0402
+- Eccezione deliberata: C_LDO_IN/C_LDO_OUT sono 10 µF 0805 (derating DC-bias,
+  richiesta stabilità XC6220) — non riportarli a 0603
 - LED: generici 0603 già in casa — NON serve MPN/LCSC, lasciali senza `mpn=`.
   Il warning di build "No house LED found ... 0603" è atteso e va ignorato.
 - Ogni altro componente: disponibile su LCSC con stock > 0

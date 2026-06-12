@@ -53,8 +53,10 @@ Pfet(name="Q_RVP", D=BAT_RAW, S=VBAT, G=GND)
 Schottky(name="D_RVP", A=BAT_RAW, K=VBAT, dnp=True)
 PinHeader(name="J_IMEAS", pins=2, pitch="2.54mm", mount="THT", P1=VBAT, P2=VBAT_SW)
 Ldo(name="U2", VIN=VBAT_SW, VOUT=VDD_3V3, GND=GND, CE=VBAT_SW)
-Capacitor(name="C_LDO_IN", value="10uF", package="0603", P1=VBAT_SW, P2=GND)
-Capacitor(name="C_LDO_OUT", value="10uF", package="0603", P1=VDD_3V3, P2=GND)
+# 0805 (eccezione al vincolo 0603): derating DC-bias — a 4.2V un 10uF 0603 rende ~6uF,
+# sotto la tabella di compensazione XC6220; lo 0805 mantiene il valore effettivo
+Capacitor(name="C_LDO_IN", value="10uF", package="0805", P1=VBAT_SW, P2=GND)
+Capacitor(name="C_LDO_OUT", value="10uF", package="0805", P1=VDD_3V3, P2=GND)
 
 # USB-C: native USB data to ESP32, VBUS to charger (DNP) and Schottky (DNP)
 UsbC(name="J_USB", VBUS=VBUS, GND=GND, USB=USB, CC1=CC1, CC2=CC2, SHIELD=GND)
