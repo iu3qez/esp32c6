@@ -5,12 +5,12 @@
 C6 Zigbee Macro Switch: interruttore Zigbee a batteria con ESP32-C6.
 Design spec: docs/superpowers/specs/2026-06-11-c6-zigbee-macro-switch-design.md
 Toolchain: `pcb` di Diode Inc. (linguaggio Zener, file .zen) — NON più atopile.
-Workspace Zener: zener/ (board top-level C6MacroSwitch.zen, manifest pcb.toml).
 
-Il vecchio progetto atopile (main.ato, parts/, layouts/) resta come riferimento:
-non modificarlo. atopile ≤0.15.7 non rilegge PCB salvati da KiCad 10
-(github.com/atopile/atopile/issues/1822) — motivo della migrazione.
-Da parts/ si riusano simboli/footprint KiCad già verificati.
+Il workspace Zener è la root del repo: board top-level `C6MacroSwitch.zen`,
+manifest `pcb.toml`, componenti riusabili in `components/`, layout in `layout/`.
+Il vecchio progetto atopile (main.ato, parts/, layouts/) è stato rimosso —
+recuperabile da git history se servisse. atopile ≤0.15.7 non rilegge PCB salvati
+da KiCad 10 (github.com/atopile/atopile/issues/1822): motivo della migrazione.
 
 ## Vincoli hardware non negoziabili
 
