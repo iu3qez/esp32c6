@@ -10,8 +10,9 @@ Stock letti dal campo `stockNumber` delle pagine prodotto lcsc.com.
 | J_USB | TYPE-C-31-M-12 (Korean Hroparts) | C165948 | 175.320 | |
 | SW1–SW6 | CPG135001D01 (Kailh Choc) | C400229 | **0 — esaurito** | già in casa (customer-supplied); MOQ 1000 al restock |
 | SW_RST, SW_BOOT | TSA061B2808B (BZCN) | C20624994 | 335 | stock basso, ok per prototipi |
-| D_USB_PWR | 1N5817W (Slkor) | C5185908 | 12.100 | DNP |
-| U2 | XC6220B331MR-G (Torex, LDO 3.3V 1A) | C86534 | 9.867 | |
+| D_USB_PWR, D_RVP | 1N5817W (Slkor) | C5185908 | 12.100 | usato 2×, entrambi DNP |
+| Q_RVP | AO3401A (Alpha & Omega, P-MOSFET SOT-23) | C15127 | 354.200 (verificato 2026-06-12) | protezione inversione batteria |
+| U2 | XC6220B331MR-G (Torex, LDO 3.3V 1A) | C86534 | 9.867 | C_LDO_IN/OUT ora 10 µF (C19702, già in tabella passivi) |
 | U3 | MCP73831T-2ACI/OT (Microchip, charger) | C424093 | 12.519 | DNP |
 | J_BAT | S2B-PH-K-S(LF)(SN) (JST PH 2p) | C173752 | 87.260 | |
 
@@ -35,3 +36,5 @@ Stock letti dal campo `stockNumber` delle pagine prodotto lcsc.com.
   sostituti verificati. Ricontrollare lo stock al momento dell'ordine.
 - L'header J_IMEAS (2 pin 2,54 mm) e relativo shunt sono generici pin-header:
   qualunque codice a stock va bene (es. ricerca "pin header 2.54 1x2").
+- D_USB_PWR: mai montato insieme a batteria collegata con jumper J_IMEAS
+  inserito (bypassa il charger).

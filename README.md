@@ -28,21 +28,29 @@ verificato e funziona.
 |---|---|
 | IO0–IO5 | Tasti macro KEY1–KEY6 (LP-GPIO: wake da deep sleep, pull-up interni) |
 | IO6 | ADC partitore batteria (1M/1M + 100nF) |
-| IO8 | LED di stato (verde, attivo alto) |
+| IO8 | strapping, pullup 10k (download mode) |
 | IO9 | Boot (pull-up 10k + tasto) |
+| IO10 | LED di stato (verde, attivo alto) |
 | IO12/IO13 | USB D−/D+ (USB nativo) |
 | EN | Reset (pull-up 10k + 1µF + tasto) |
 
 ## Alimentazione
 
 ```
-J_BAT (JST-PH) → J_IMEAS (jumper misura corrente) → XC6220 → 3V3
+J_BAT (JST-PH) → Q_RVP/D_RVP (protezione inversione) → J_IMEAS (jumper misura corrente) → XC6220 → 3V3
 USB VBUS → MCP73831 (DNP) → BAT+   |   USB VBUS → 1N5817W (DNP) → ingresso LDO
 ```
 
 - Rimuovendo lo shunt da J_IMEAS si misura l'assorbimento totale a batteria.
+- Protezione inversione batteria: montare ESATTAMENTE UNO tra Q_RVP
+  (AO3401A, basse perdite) e D_RVP (1N5817W, semplice, ~300 mV di caduta);
+  mai entrambi.
 - D_USB_PWR (DNP) permette flash/test da USB senza batteria.
+  **Attenzione:** mai montarlo con batteria collegata e jumper J_IMEAS
+  inserito (bypassa il charger).
 - Charger e relativi R/LED tutti DNP sulle prime board.
+- Cutoff batteria firmware consigliato ~3,4 V (sotto, il rail esce di
+  regolazione durante i burst TX).
 
 ## Note di popolamento
 

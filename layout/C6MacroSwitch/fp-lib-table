@@ -1,5 +1,6 @@
 (fp_lib_table
   (version 7)
+  (lib (name "iu3qez_esp32c6_components_AO3401A") (type "KiCad") (uri "${KIPRJMOD}/../../components/AO3401A") (options "") (descr ""))
   (lib (name "iu3qez_esp32c6_components_ESP32C6WROOM1N8") (type "KiCad") (uri "${KIPRJMOD}/../../components/ESP32C6WROOM1N8") (options "") (descr ""))
   (lib (name "iu3qez_esp32c6_components_KailhChoc") (type "KiCad") (uri "${KIPRJMOD}/../../components/KailhChoc") (options "") (descr ""))
   (lib (name "iu3qez_esp32c6_components_MCP73831") (type "KiCad") (uri "${KIPRJMOD}/../../components/MCP73831") (options "") (descr ""))

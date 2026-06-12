@@ -149,6 +149,17 @@
         (layer "Cmts.User")
         (uuid "35669d67-85b0-43d3-8b1d-5501fecdf066")
     )
+    (fp_rect
+        (start -10.25 -2.9)
+        (end 5.25 12.6)
+        (stroke
+            (width 0.05)
+            (type solid)
+        )
+        (fill no)
+        (layer "F.CrtYd")
+        (uuid "a3f1c2d4-5e6b-4a7c-8d9e-0f1a2b3c4d5e")
+    )
     (fp_text user "%R"
         (at 0 0 0)
         (layer "F.Fab")
@@ -187,21 +198,21 @@
         (layers "*.Cu" "*.Mask")
         (uuid "57f31232-cd5b-48b8-aa95-335888e8684c")
     )
-    (pad "" thru_hole circle
+    (pad "" np_thru_hole circle
         (at -2.5 4.85 0)
         (size 3.5 3.5)
         (drill 3.5)
         (layers "*.Cu" "*.Mask")
         (uuid "c737b090-e611-4ef1-a0d0-89e04d02dffb")
     )
-    (pad "" thru_hole circle
+    (pad "" np_thru_hole circle
         (at -8 4.85 0)
         (size 2 2)
         (drill 2)
         (layers "*.Cu" "*.Mask")
         (uuid "bd349de7-392f-4c4a-afb1-3686cafdc5e2")
     )
-    (pad "" thru_hole circle
+    (pad "" np_thru_hole circle
         (at 3 4.85 0)
         (size 2 2)
         (drill 2)
