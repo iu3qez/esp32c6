@@ -138,16 +138,16 @@
 	(property "PCB_GIT_HASH" "d10d3c0")
 	(property "PCB_NAME" "C6MacroSwitch")
 	(property "PCB_VERSION" "v0.0.0")
-	(footprint "kicad_libraries_kicad-footprints_LED_SMD@9.0.3:LED_0402_1005Metric"
+	(footprint "kicad_libraries_kicad-footprints_LED_SMD@9.0.3:LED_0603_1608Metric"
 		(layer "F.Cu")
-		(uuid "0de27ef5-85e1-435c-83be-6fe170d5d2cd")
-		(at 131.515 94.5)
-		(descr "LED SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
+		(uuid "00c90489-de2b-4646-9e42-c2f13181c4c5")
+		(at 135.485 69 180)
+		(descr "LED SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
 		(tags "LED")
-		(property "Reference" "D2"
-			(at 0 -1.17 0)
+		(property "Reference" "D1"
+			(at 0 -1.43 180)
 			(layer "F.SilkS")
-			(uuid "7b6599d7-081a-47bf-ad38-d8fd041d1645")
+			(uuid "6ffde99e-48b5-46bf-8608-3d9fefdcd391")
 			(effects
 				(font
 					(size 1 1)
@@ -155,11 +155,11 @@
 				)
 			)
 		)
-		(property "Value" "VLMG1500-GS08"
-			(at 0 1.17 0)
+		(property "Value" "LED RED"
+			(at 0 1.43 180)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "16012621-0230-4730-b804-87548835f223")
+			(uuid "c611e81f-cd5d-4cf6-b9b8-1e1f2d949254")
 			(effects
 				(font
 					(size 1 1)
@@ -167,11 +167,287 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.vishay.com/docs/82554/vlmo1500.pdf"
+		(property "Datasheet" ""
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2720fe1e-3f04-4928-9f72-6687999b85af")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "LED RED"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f81fe61d-38a0-41ac-a9c7-635ca0b99d69")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Path" "D_CHG.LED"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "5d5e690e-1885-4567-b1ab-25aa2bd3447d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Color" "red"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "d248f66b-be57-4e14-8155-a7f90a96fde0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" "0603"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "715d5a9f-36dc-49e2-a5bc-89e583cc9988")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Prefix" "D"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "b03e62d6-00d7-460d-835d-810ef744a9ef")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Type" "led"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "85d95a45-3cd8-46eb-952a-9c2d37bd05f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/ca316c65-4b8a-587a-8cdb-3728fe621918/ca316c65-4b8a-587a-8cdb-3728fe621918")
+		(attr smd dnp)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start 0.8 -0.735)
+			(end -1.485 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "45de1728-82f7-42ee-9ef0-2b5abd4f2712")
+		)
+		(fp_line
+			(start -1.485 0.735)
+			(end 0.8 0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "2da6dc93-fd96-405a-94a7-f8990e7aae1e")
+		)
+		(fp_line
+			(start -1.485 -0.735)
+			(end -1.485 0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "2604cbfe-654c-4f4e-be39-092344b99526")
+		)
+		(fp_line
+			(start 1.48 0.73)
+			(end -1.48 0.73)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "3090beb3-5fc9-4f40-b210-083845c2f1b5")
+		)
+		(fp_line
+			(start 1.48 -0.73)
+			(end 1.48 0.73)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "f146d87b-c6bc-4ad7-bf5e-9ab1004dd250")
+		)
+		(fp_line
+			(start -1.48 0.73)
+			(end -1.48 -0.73)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "4c48bec6-40e7-408d-8206-4ac34e5f386a")
+		)
+		(fp_line
+			(start -1.48 -0.73)
+			(end 1.48 -0.73)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "ff2e7cef-ac08-41e4-a8a5-b8a1d8d51a9f")
+		)
+		(fp_line
+			(start 0.8 0.4)
+			(end 0.8 -0.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "3bababbb-c1f1-4dce-b4e9-09d3f49d79da")
+		)
+		(fp_line
+			(start 0.8 -0.4)
+			(end -0.5 -0.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "638bc4e9-e4a9-4d23-81be-744f399c525c")
+		)
+		(fp_line
+			(start -0.5 -0.4)
+			(end -0.8 -0.1)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6a2cb071-92fe-4a97-8747-248398d98d49")
+		)
+		(fp_line
+			(start -0.8 0.4)
+			(end 0.8 0.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "d3d07008-3d89-4452-9f5e-111d769612fb")
+		)
+		(fp_line
+			(start -0.8 -0.1)
+			(end -0.8 0.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "dd505a6a-4038-40d6-a38e-5d251b52de48")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(uuid "9bab0b11-07bb-4868-bb60-02d4aa6b0866")
+			(effects
+				(font
+					(size 0.4 0.4)
+					(thickness 0.06)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -0.7875 0 180)
+			(size 0.875 0.95)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net "CHG_STAT")
+			(uuid "7e9732e5-3c30-4274-baa3-b00f7e2b8a93")
+		)
+		(pad "2" smd roundrect
+			(at 0.7875 0 180)
+			(size 0.875 0.95)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net "CHG_LED_A")
+			(uuid "f3c14502-04d0-4b7a-afa3-944f4f0a088d")
+		)
+		(embedded_fonts no)
+		(model "kicad-embed://LED_0603_1608Metric.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+		(embedded_files
+			(file
+				(name LED_0603_1608Metric.step)
+				(type model)
+				(checksum "59D856DA693EFE89CF73E4E0688BE4D7")
+			)
+		)
+	)
+	(footprint "kicad_libraries_kicad-footprints_LED_SMD@9.0.3:LED_0603_1608Metric"
+		(layer "F.Cu")
+		(uuid "03e0ccb3-22d0-4ff7-ac05-8939a31bcb05")
+		(at 131.515 94.5)
+		(descr "LED SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
+		(tags "LED")
+		(property "Reference" "D2"
+			(at 0 -1.43 0)
+			(layer "F.SilkS")
+			(uuid "72fdcfdf-5b7e-433b-b602-e1f00bfa82d6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "LED GREEN"
+			(at 0 1.43 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "326ef8bf-77e7-41ee-b8e8-3b447022e08c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a4fb7755-f4c4-4321-a0bf-7279831a194c")
+			(uuid "3c26d80d-eb30-4353-a618-20deb10811e5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -182,7 +458,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ce65d904-e0a8-4e22-a442-341f74c76308")
+			(uuid "dd278126-bf3a-4913-80ce-ad8f16702604")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -193,11 +469,10 @@
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "500a8305-d3b5-4b97-baa2-01b05484df12")
+			(uuid "2167020a-a399-458e-9355-2810784c7cb4")
 			(effects
 				(font
 					(size 1.27 1.27)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -205,47 +480,21 @@
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "d947a52f-ffa9-4ed2-93af-9474344d9268")
+			(uuid "b1333cf8-3ebb-4e81-90b6-d50a3fe9bd0d")
 			(effects
 				(font
 					(size 1.27 1.27)
-					(thickness 0.15)
 				)
 			)
 		)
-		(property "Manufacturer" "Vishay Semiconductor Opto Division"
+		(property "Package" "0603"
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "f63576c6-4d79-491d-aace-80c7088bb13d")
+			(uuid "54b92806-1921-47e1-8f7d-092e02bc610c")
 			(effects
 				(font
 					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Mpn" "VLMG1500-GS08"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "c50c5e68-003a-4051-b30f-51713862d2d2")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Package" "0402"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "e9f9af65-75c3-4097-811f-ed02b711c396")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -253,11 +502,10 @@
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "466724d1-ec82-4fd5-aa05-a42d4bc2f2d3")
+			(uuid "0494efb1-0735-417c-9a2a-9388bd6cf595")
 			(effects
 				(font
 					(size 1.27 1.27)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -265,164 +513,165 @@
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "62798c18-6dd1-481e-b1c4-a0a42d95b4c1")
+			(uuid "d684969c-aada-439b-b720-503068420821")
 			(effects
 				(font
 					(size 1.27 1.27)
-					(thickness 0.15)
 				)
 			)
 		)
 		(path "/ac0592c9-9638-59e5-a5bf-3d847d51c13f/ac0592c9-9638-59e5-a5bf-3d847d51c13f")
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
-		(fp_circle
-			(center -1.09 0)
-			(end -1.04 0)
+		(fp_line
+			(start -1.485 -0.735)
+			(end -1.485 0.735)
 			(stroke
-				(width 0.1)
+				(width 0.12)
 				(type solid)
 			)
-			(fill no)
 			(layer "F.SilkS")
-			(uuid "18ef8386-632c-4a28-afc4-8570be56803b")
+			(uuid "44fa76de-3043-4dcb-8f5c-ce9acf7ad720")
 		)
 		(fp_line
-			(start -0.93 -0.47)
-			(end 0.93 -0.47)
+			(start -1.485 0.735)
+			(end 0.8 0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "32ec7e55-a495-4797-8e77-56c1cfc94392")
+		)
+		(fp_line
+			(start 0.8 -0.735)
+			(end -1.485 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "62bd8751-99d2-4b54-9944-01316c1420f3")
+		)
+		(fp_line
+			(start -1.48 -0.73)
+			(end 1.48 -0.73)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "96eacdc3-30ad-41fe-8aba-678b2b363ac3")
+			(uuid "122e5065-88de-45f5-b20e-b59f61bd6f8b")
 		)
 		(fp_line
-			(start -0.93 0.47)
-			(end -0.93 -0.47)
+			(start -1.48 0.73)
+			(end -1.48 -0.73)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "09dbd442-efe4-4eac-8be0-d4993cc19083")
+			(uuid "402671fe-a860-45aa-b181-982f24c3d14d")
 		)
 		(fp_line
-			(start 0.93 -0.47)
-			(end 0.93 0.47)
+			(start 1.48 -0.73)
+			(end 1.48 0.73)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "f2a4e925-861d-4653-bd40-46bc747dc851")
+			(uuid "1f8f0f26-6349-4be2-8513-8e51baab4899")
 		)
 		(fp_line
-			(start 0.93 0.47)
-			(end -0.93 0.47)
+			(start 1.48 0.73)
+			(end -1.48 0.73)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "83a146d3-a7de-4d63-84c6-be8d8bb48227")
+			(uuid "42124eda-1072-4ab3-baaf-2c69bdfffb68")
 		)
 		(fp_line
-			(start -0.5 -0.25)
-			(end 0.5 -0.25)
+			(start -0.8 -0.1)
+			(end -0.8 0.4)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "9e95e780-add4-4048-9bbb-e6160c7807c6")
+			(uuid "a3147ae0-c3dc-4b63-8cce-357d0bdc97eb")
 		)
 		(fp_line
-			(start -0.5 0.25)
-			(end -0.5 -0.25)
+			(start -0.8 0.4)
+			(end 0.8 0.4)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "775cb9ec-1663-4635-8760-dd7829118fb1")
+			(uuid "af3bc8d7-59ea-4cb6-8951-816da2a508e7")
 		)
 		(fp_line
-			(start -0.4 0.25)
-			(end -0.4 -0.25)
+			(start -0.5 -0.4)
+			(end -0.8 -0.1)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "f31f8d8c-aa3c-468d-9d56-7f9c637cae1c")
+			(uuid "8184ff41-5359-48e9-9bae-844819ab6f1a")
 		)
 		(fp_line
-			(start -0.3 0.25)
-			(end -0.3 -0.25)
+			(start 0.8 -0.4)
+			(end -0.5 -0.4)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "f5e7e02e-a083-42cb-96c8-6e144a3a62cb")
+			(uuid "18eaed54-36c0-4ac0-a26b-f5c14db1e4a8")
 		)
 		(fp_line
-			(start 0.5 -0.25)
-			(end 0.5 0.25)
+			(start 0.8 0.4)
+			(end 0.8 -0.4)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "f4cd3051-4dcb-46ab-8682-b930c4a0e9b2")
-		)
-		(fp_line
-			(start 0.5 0.25)
-			(end -0.5 0.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "aac604ea-3925-4416-bf42-b29a851bb818")
+			(uuid "a14207ef-54d5-4dc8-9600-635ae89d5ee5")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
 			(layer "F.Fab")
-			(uuid "eef540d5-350b-4103-a3d2-60a407733b2b")
+			(uuid "77eda94e-f952-493e-b662-30e784a42661")
 			(effects
 				(font
-					(size 0.25 0.25)
-					(thickness 0.04)
+					(size 0.4 0.4)
+					(thickness 0.06)
 				)
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.485 0)
-			(size 0.59 0.64)
+			(at -0.7875 0)
+			(size 0.875 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(uuid "097f4799-a46e-40e7-8874-9d2bf35f3ee6")
+			(uuid "140fa1a0-1a79-4cb1-8ac3-416ae87a3889")
 		)
 		(pad "2" smd roundrect
-			(at 0.485 0)
-			(size 0.59 0.64)
+			(at 0.7875 0)
+			(size 0.875 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "LED_A")
-			(uuid "08ee333d-0c91-42fd-84d9-b881ec552dc9")
+			(uuid "da5f38ff-77e5-4923-9937-9a732622518c")
 		)
 		(embedded_fonts no)
-		(embedded_files
-			(file
-				(name "LED_0402_1005Metric.step")
-				(type model)
-				(checksum "399D51F961B5FEFDABE6D00EF22214B7")
-			)
-		)
-		(model "kicad-embed://LED_0402_1005Metric.step"
+		(model "kicad-embed://LED_0603_1608Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -431,6 +680,13 @@
 			)
 			(rotate
 				(xyz 0 0 0)
+			)
+		)
+		(embedded_files
+			(file
+				(name LED_0603_1608Metric.step)
+				(type model)
+				(checksum "59D856DA693EFE89CF73E4E0688BE4D7")
 			)
 		)
 	)
@@ -3315,302 +3571,6 @@
 			)
 		)
 		(model "kicad-embed://R_0603_1608Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "kicad_libraries_kicad-footprints_LED_SMD@9.0.3:LED_0402_1005Metric"
-		(layer "F.Cu")
-		(uuid "311520fb-36f5-4488-ad3b-664c99bbe434")
-		(at 135.485 69 180)
-		(descr "LED SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
-		(tags "LED")
-		(property "Reference" "D1"
-			(at 0 -1.17 0)
-			(layer "F.SilkS")
-			(uuid "d6728f63-6515-4fc8-9933-1d915f4d542e")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "VLMS1500-GS08"
-			(at 0 1.17 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5e43d815-afa8-4d6c-a3e2-0672b9430544")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/docs/82554/vlmo1500.pdf"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f48db6ee-94eb-4a75-812e-6217ab1e9c19")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "LED RED"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "a60b3076-ed13-4142-b679-532973f240c1")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Path" "D_CHG.LED"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "1cb00fe9-051c-47a0-9366-f067e16024ca")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Color" "red"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "e3aa2d30-5c51-4a69-be69-d60fed1cf2fb")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Manufacturer" "Vishay Semiconductor Opto Division"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "660b9e6a-21df-4615-b2df-806a14faa5d8")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Mpn" "VLMS1500-GS08"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "3962e71f-fa54-4a78-a168-c38fdd347fa2")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Package" "0402"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "30e0a95c-a7d2-4282-82c3-93aa8cc1a7b2")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Prefix" "D"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "11bf0a01-8888-44e3-993b-6a03aabb00f1")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Type" "led"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "56959d3b-2f76-47e7-b331-c250a5a0bfed")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(path "/ca316c65-4b8a-587a-8cdb-3728fe621918/ca316c65-4b8a-587a-8cdb-3728fe621918")
-		(attr smd dnp)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_circle
-			(center -1.09 0)
-			(end -1.04 0)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "81229b5c-6a4a-42e6-a354-bbb9d5400260")
-		)
-		(fp_line
-			(start 0.93 0.47)
-			(end -0.93 0.47)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "a139841d-6639-4890-9c45-9c328ab6b02f")
-		)
-		(fp_line
-			(start 0.93 -0.47)
-			(end 0.93 0.47)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "29840099-57cc-47dc-9e4d-dcf4bd6e993c")
-		)
-		(fp_line
-			(start -0.93 0.47)
-			(end -0.93 -0.47)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "5e3bf7ae-4d12-4bdc-b439-0409bbf6aee5")
-		)
-		(fp_line
-			(start -0.93 -0.47)
-			(end 0.93 -0.47)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "d52354ad-5b0f-45c3-b514-56a59da0af01")
-		)
-		(fp_line
-			(start 0.5 0.25)
-			(end -0.5 0.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "0a7beec9-9663-463f-9c8b-a347e4bb4237")
-		)
-		(fp_line
-			(start 0.5 -0.25)
-			(end 0.5 0.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "e592a29a-02ea-4fa0-95f7-5b1d010b0619")
-		)
-		(fp_line
-			(start -0.3 0.25)
-			(end -0.3 -0.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "39f3d6c5-60d8-4e0d-b6c7-51f1565835c5")
-		)
-		(fp_line
-			(start -0.4 0.25)
-			(end -0.4 -0.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "9e5e2142-b0d5-448e-bf3f-d21387620edc")
-		)
-		(fp_line
-			(start -0.5 0.25)
-			(end -0.5 -0.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "800f8029-e0b5-47f1-8990-cda83a429498")
-		)
-		(fp_line
-			(start -0.5 -0.25)
-			(end 0.5 -0.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "19f866a0-9247-4029-9da9-bef154ce6bd8")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(uuid "8a0f376d-0855-45fc-a965-02e419ad0f3e")
-			(effects
-				(font
-					(size 0.25 0.25)
-					(thickness 0.04)
-				)
-			)
-		)
-		(pad "1" smd roundrect
-			(at -0.485 0 180)
-			(size 0.59 0.64)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.25)
-			(net "CHG_STAT")
-			(uuid "55cfca48-4aca-4f59-a272-40a8b79abfec")
-		)
-		(pad "2" smd roundrect
-			(at 0.485 0 180)
-			(size 0.59 0.64)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.25)
-			(net "CHG_LED_A")
-			(uuid "71dac4e4-ebce-4fb1-911f-81e067d2985e")
-		)
-		(embedded_fonts no)
-		(embedded_files
-			(file
-				(name "LED_0402_1005Metric.step")
-				(type model)
-				(checksum "399D51F961B5FEFDABE6D00EF22214B7")
-			)
-		)
-		(model "kicad-embed://LED_0402_1005Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -11358,6 +11318,12 @@
 				QUfnl2ViH0LfZOsH|
 			)
 			(checksum "F2853869D94C03D7740497A08B7A83DC")
+		)
+		(file
+			(name LED_0603_1608Metric.step)
+			(type model)
+			(data |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|)
+			(checksum "59D856DA693EFE89CF73E4E0688BE4D7")
 		)
 	)
 )
