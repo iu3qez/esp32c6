@@ -62,6 +62,7 @@ Schottky(name="D_USB_PWR", A=VBUS, K=VBAT_SW, dnp=True)
 Charger(name="U3", VDD=VBUS, VBAT=VBAT, VSS=GND, STAT=CHG_STAT, PROG=CHG_PROG, dnp=True)
 Resistor(name="R_PROG", value="2kohm", package="0603", P1=CHG_PROG, P2=GND, dnp=True)  # ~500mA charge
 Resistor(name="R_CHG_LED", value="1kohm", package="0603", P1=VBUS, P2=CHG_LED_A, dnp=True)
+# LED 0603 generici già in casa: nessun MPN, "No house LED" warning atteso (vedi CLAUDE.md)
 Led(name="D_CHG", color="red", package="0603", A=CHG_LED_A, K=CHG_STAT, dnp=True)  # STAT sinks when charging
 
 # ESP32-C6
