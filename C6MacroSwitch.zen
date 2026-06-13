@@ -8,6 +8,7 @@ Resistor = Module("@stdlib/generics/Resistor.zen")
 Capacitor = Module("@stdlib/generics/Capacitor.zen")
 Led = Module("@stdlib/generics/Led.zen")
 PinHeader = Module("@stdlib/generics/PinHeader.zen")
+MountingHole = Module("@stdlib/generics/MountingHole.zen")
 
 Esp32 = Module("./components/ESP32C6WROOM1N8/ESP32C6WROOM1N8.zen")
 UsbC = Module("./components/TYPEC31M12/TYPEC31M12.zen")
@@ -119,6 +120,10 @@ Led(name="D_LED", color="green", package="0603", A=LED_A, K=GND)
 Resistor(name="R_VBAT_TOP", value="1Mohm", package="0603", P1=VBAT_SW, P2=VBAT_SENSE)
 Resistor(name="R_VBAT_BOT", value="1Mohm", package="0603", P1=VBAT_SENSE, P2=GND)
 Capacitor(name="C_VBAT_SENSE", value="100nF", package="0603", P1=VBAT_SENSE, P2=GND)
+
+# 4x M3 mounting holes at the board corners, pads tied to GND
+for i in range(4):
+    MountingHole(name="H%d" % (i + 1), diameter="M3", P1=GND)
 
 # pcb:sch 3V3.0 x=-1075.4200 y=2145.3000 rot=0
 # pcb:sch 3V3.1 x=-808.7200 y=2310.4000 rot=0
