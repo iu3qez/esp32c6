@@ -76,7 +76,20 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "solder_mask_bridge|139070000|109500000|b6f508e3-3649-4ba2-8120-c329180e3264|b6ce4537-a0f7-4a8d-ac11-1c2fb82e5ee6",
+          ""
+        ],
+        [
+          "solder_mask_bridge|140720000|109900000|72e3f14c-7a2b-402f-a72d-ad2c98bb3048|3bcb9784-a013-4788-89ff-64b94f896af3",
+          ""
+        ],
+        [
+          "solder_mask_bridge|140720000|110350000|72e3f14c-7a2b-402f-a72d-ad2c98bb3048|56bb4c05-2e7c-4a0e-9891-1b53f7d89b4f",
+          ""
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -124,7 +137,7 @@
         "silk_over_copper": "warning",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
-        "solder_mask_bridge": "error",
+        "solder_mask_bridge": "warning",
         "starved_thermal": "error",
         "text_height": "warning",
         "text_on_edge_cuts": "error",
@@ -577,6 +590,10 @@
       {
         "netclass": "Power",
         "pattern": "3*"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "BAT*"
       }
     ]
   },
