@@ -1,0 +1,28 @@
+"""Microchip MCP73831T-2ACI/OT — single-cell Li-Ion/Li-Po linear charge
+management controller, 4.20V regulation, SOT-23-5.
+
+Charge current is set by R_PROG from PROG to VSS (I_REG = 1000V / R_PROG).
+STAT is a tri-state status output.
+"""
+
+VDD = io(Power)
+VBAT = io(Power)
+VSS = io(Ground)
+STAT = io(Net, help="Tri-state charge status output")
+PROG = io(Net, help="Charge current program input (resistor to VSS)")
+
+Component(
+    name="MCP73831",
+    symbol=Symbol(library="./MCP73831-2-OT.kicad_sym"),
+    footprint="./SOT-23-5.kicad_mod",
+    prefix="U",
+    part=Part(mpn="MCP73831T-2ACI/OT", manufacturer="Microchip Tech"),
+    properties={"LCSC": "C424093"},
+    pins={
+        "STAT": STAT,
+        "VSS": VSS,
+        "VBAT": VBAT,
+        "VDD": VDD,
+        "PROG": PROG,
+    },
+)

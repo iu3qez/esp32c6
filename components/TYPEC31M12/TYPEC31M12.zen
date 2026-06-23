@@ -1,0 +1,33 @@
+"""Korean Hroparts TYPE-C-31-M-12 USB-C 2.0 receptacle"""
+
+load("@stdlib/interfaces.zen", "Usb2")
+
+VBUS = io(Power)
+GND = io(Ground)
+USB = io(Usb2)
+CC1 = io(Net)
+CC2 = io(Net)
+SBU1 = io(Net, optional=True)
+SBU2 = io(Net, optional=True)
+SHIELD = io(Net)
+
+Component(
+    name="TYPEC31M12",
+    symbol=Symbol(library="./TYPE-C-31-M-12.kicad_sym"),
+    footprint="./USB-C_SMD-TYPE-C-31-M-12_1.kicad_mod",
+    part=Part(mpn="TYPE-C-31-M-12", manufacturer="Korean Hroparts Elec"),
+    properties={"LCSC": "C165948"},
+    pins={
+        "VBUS": VBUS,
+        "GND": GND,
+        "DP1": USB.D.P,
+        "DP2": USB.D.P,
+        "DN1": USB.D.N,
+        "DN2": USB.D.N,
+        "CC1": CC1,
+        "CC2": CC2,
+        "SBU1": SBU1,
+        "SBU2": SBU2,
+        "EH": SHIELD,
+    },
+)

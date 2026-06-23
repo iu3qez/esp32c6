@@ -1,0 +1,22 @@
+"""Alpha & Omega AO3401A P-channel MOSFET, SOT-23; -30V Vds, -4.0A Id, Vgs(th) -0.5 to -1.3V.
+
+Pinout (SOT-23): 1 = G, 2 = S, 3 = D.
+"""
+
+G = io(Net)
+S = io(Net)
+D = io(Net)
+
+Component(
+    name="AO3401A",
+    symbol=Symbol(library="./AO3401A.kicad_sym"),
+    footprint="./SOT-23.kicad_mod",
+    prefix="Q",
+    part=Part(mpn="AO3401A", manufacturer="Alpha & Omega Semiconductor"),
+    properties={"LCSC": "C15127"},
+    pins={
+        "G": G,
+        "S": S,
+        "D": D,
+    },
+)

@@ -1,0 +1,13 @@
+"""BZCN TSA061B2808B SMD tactile button; pins 1,2 = P1 side, 3,4,5 = P2 side."""
+
+P1 = io(Net)
+P2 = io(Net)
+
+Component(
+    name="TactileTSA061B",
+    symbol=Symbol(library="./TSA061B2808B.kicad_sym"),
+    footprint="./SW-SMD_TSA061B2808B.kicad_mod",
+    part=Part(mpn="TSA061B2808B", manufacturer="BZCN"),
+    properties={"LCSC": "C20624994"},
+    pins={"1": P1, "2": P1, "3": P2, "4": P2, "5": P2},
+)

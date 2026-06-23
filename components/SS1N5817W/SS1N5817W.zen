@@ -1,0 +1,14 @@
+"""Slkor 1N5817W Schottky barrier diode, SOD-123; pin 1 = cathode (K), pin 2 = anode (A)."""
+
+A = io(Net)
+K = io(Net)
+
+Component(
+    name="SS1N5817W",
+    symbol=Symbol(library="./1N5817W_C5185908.kicad_sym"),
+    footprint="./SOD-123_L2.7-W1.6-LS3.6-RD.kicad_mod",
+    prefix="D",
+    part=Part(mpn="1N5817W", manufacturer="Slkor"),
+    properties={"LCSC": "C5185908"},
+    pins={"1": K, "2": A},
+)
