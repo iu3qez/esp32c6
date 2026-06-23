@@ -55,4 +55,4 @@ USB VBUS → MCP73831 (DNP) → BAT+   |   USB VBUS → 1N5817W (DNP) → ingres
 ## Note di popolamento
 
 - SW1–SW6 (Kailh Choc CPG135001D01): esauriti su LCSC, montaggio in proprio.
-- Tutti i passivi 0603 (LED 0402, unica taglia a catalogo house).
+- Tutti i passivi 0603
